@@ -36,7 +36,6 @@ bot.on("message", async message => {
      .setFooter("This bot was made by ScriptedBuilderz.")
      .setColor("#62a4f5")
      .setThumbnail("https://cdn.discordapp.com/attachments/471041267673989130/471055062701965333/lol.jpg")
-
      message.channel.send(aembed);
   }
 
@@ -66,7 +65,7 @@ if(cmd === `${prefix}dm`){
   
   if (cmd === `${prefix}report`){
 
-   let rUser = message.guild.member(message.mentions.users.first() || message.guilds.members.get(args[0])));
+   let rUser = message.guild.member(message.mentions.users.first() || message.guilds.members.get(args[0]));
    if(!rUser) return message.channel.send("Sorry couldnt find user :unamused:");
    let reason = args.join(" ").slice(22);
 

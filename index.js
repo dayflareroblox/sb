@@ -52,18 +52,7 @@ if(cmd === `${prefix}dmuser`){
      if(message.mentions.users.first()) return send(msg);
   }
 
-});
-
-
-if(cmd === `${prefix}dm`){
-
-  let y = args.slice(1).join(" ");
-  let x = message.mentions.users.first();
-  x.send(y);
-  }
 
 });
-
-
 
 bot.login("process.env.BOT_TOKEN");

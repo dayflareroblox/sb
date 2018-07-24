@@ -57,7 +57,7 @@ if(cmd === `${prefix}dm`){
   }
 
 
- if(cmd === ` ${prefix}say`{
+ if(cmd === ` ${prefix}say`){
 
       if(!message.member.hasPermission("ADMINISTRATOR")) return;
 

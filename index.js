@@ -48,7 +48,9 @@ if(cmd === `${prefix}status`){
 
 if(cmd === `${prefix}dmuser`){
 
+    let mention = args.join(" ");
      let msg = args.join(" ");
+     
      if(message.mentions.users.first()) return message.mentions.users.first().send(msg);
   }
 

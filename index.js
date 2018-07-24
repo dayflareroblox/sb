@@ -49,7 +49,7 @@ if(cmd === `${prefix}status`){
 if(cmd === `${prefix}dmuser`){
 
      let msg = args.join(" ");
-     if(message.mentions.users.first()) return send(msg);
+     if(message.mentions.users.first()) return message.mentions.users.first().send(msg);
   }
 
 

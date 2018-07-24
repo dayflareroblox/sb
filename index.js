@@ -62,9 +62,9 @@ if(cmd === `${prefix}dm`){
       message.delete();
 }
   
-  if (cmd === `${prefix}report`){
+if (cmd === `${prefix}report`){
 
-   let rUser = message.guild.member(message.mentions.users.first() || message.guilds.members.get(args[0]));
+   let rUser = message.guild.member(message.mentions.users.first() || message.guilds.members.get(args[0])));
    if(!rUser) return message.channel.send("Sorry couldnt find user :unamused:");
    let reason = args.join(" ").slice(22);
 
@@ -77,7 +77,13 @@ if(cmd === `${prefix}dm`){
    .addField("Report time", message.createdAt)
    .addField("Report Reason", reason);
 
-  message.channel.send(reportembed);
+
+   let reportschannel = message.guild.chanels.find(`name`, "reports");
+   if(!reportschannel) return message.channel.send("Couldnt find the specified channel path. :unamused:");
+
+   message.delete().catch(O_o=>{});
+   reportschannel.send(reportembed);
+
   return;
 }
   

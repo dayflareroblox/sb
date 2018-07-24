@@ -5,7 +5,7 @@ const bot = new Discord.Client({disableEveryone: true});
 
 bot.on("ready", async message => {
   console.log(`${bot.user.username} is online`);
-  bot.user.setActivity("On SourceCode", {type: "Viewing"});
+  bot.user.setActivity("On SourceCode", {type: "V"});
 });
 
 bot.on("message", async message => {
@@ -48,13 +48,13 @@ if(cmd === `${prefix}status`){
 
 if(cmd === `${prefix}dm`){
 
-     let msg = args.join(" ");
-     if(message.mentions.users.first()) return message.mentions.users.first().send(msg);
-     message.delete();
+  let y = args.slice(1).join(" ");
+  let x = message.mentions.users.first();
+  x.send(y);
   }
 
 });
 
 
 
-bot.login(process.env.BOT_TOKEN);
+bot.login("process.env.BOT_TOKEN");

@@ -87,6 +87,35 @@ if (cmd === `${prefix}report`){
   return;
 }
   
+  if(cmd === `${prefix}kick`){
+
+  let kUser = message.guild.member(message.mentions.users.first() || message.guilds.members.get(args[0]));
+  if(!kUser) return message.channel.send("User not found. :unamused:");
+  let kReason = args.join(" ").slice(22);
+  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant kick people.");
+  if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry that user cannot be kicked.");
+
+
+  let kEmbed = new Discord.RichEmbed()
+  .setDescription("/KICK/")
+  .setColor("#62a4f5")
+  .addField("Kicked User.", `${kUser} with the ID: ${kUser.id}`)
+  .addField("Kicked by:", `<@${message.author.username}> with the ID: ${message.author.id}`)
+  .addField("Channel", message.channel)
+  .addField("Time", message.createdAt)
+  .addField("Kick Reason", kReason);
+
+   let kchannel = message.guild.channels.find(`name`, "incidents");
+   if(!kchannel) return message.channel.send("Channnel path not found. :smile:")
+
+  message.guild.member(kUser).kick(kReason);
+  kchannel.send(kEmbed);
+
+
+  return;
+}
+  
+  
 });
 
 bot.login(process.env.BOT_TOKEN);

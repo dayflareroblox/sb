@@ -48,11 +48,9 @@ if(cmd === `${prefix}status`){
 if(cmd === `${prefix}dm`){
 
      let mention = (args[0]);
-
      let msg = (args[1]);
      
      if(message.mentions.users.first()) return message.mentions.users.first().send(msg);
-    
      message.delete().catch();
   }
 
@@ -60,14 +58,29 @@ if(cmd === `${prefix}dm`){
  if(cmd === `${prefix}say`){
 
       if(!message.member.hasPermission("ADMINISTRATOR")) return;
-
       const sayMessage = args.join(" ");
-
       message.delete().catch();
-
       message.channel.send(sayMessage);
-   
       message.delete();
+}
+  
+  if (cmd === `${prefix}report`){
+
+   let rUser = message.guild.member(message.mentions.users.first() || message.guilds.members.get(args[0])));
+   if(!rUser) return message.channel.send("Sorry couldnt find user :unamused:");
+   let reason = args.join(" ").slice(22);
+
+   let reportembed = new Discord.RichEmbed()
+   .setDescription("Reports")
+   .setColor("#62a4f5")
+   .addField("Reported User", `${rUser} with ID: ${rUser.id}`);
+   .addField("Reported by", `${message.author} with ID: ${message.author.id}`)
+   .addField("Channel", message.channel)
+   .addField("Report time", message.createdAt)
+   .addField("Report Reason", reason);
+
+  message.channel.send(reportembed);
+  return;
 }
   
 });

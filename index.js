@@ -53,7 +53,7 @@ if(cmd === `${prefix}dm`){
      
      if(message.mentions.users.first()) return message.mentions.users.first().send(msg);
     
-     message.delete();
+     message.delete().catch();
   }
 
 

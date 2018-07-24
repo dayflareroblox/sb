@@ -57,6 +57,17 @@ if(cmd === `${prefix}dm`){
   }
 
 
+ if(cmd === ` ${prefix}say`{
+
+      if(!message.member.hasPermission("ADMINISTRATOR")) return;
+
+      const sayMessage = args.join(" ");
+
+      message.delete().catch();
+
+      message.channel.send(sayMessage);
+}
+  
 });
 
 bot.login(process.env.BOT_TOKEN);

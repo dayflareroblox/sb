@@ -66,6 +66,8 @@ if(cmd === `${prefix}dm`){
       message.delete().catch();
 
       message.channel.send(sayMessage);
+   
+      message.delete();
 }
   
 });

@@ -23,7 +23,6 @@ bot.on("message", async message => {
     .setDescription("tut")
     .setTitle("Test")
     .setColor("#62a4f5")
-
     return message.channel.send(botembed);
   }
 
@@ -72,7 +71,7 @@ if(cmd === `${prefix}dm`){
    let reportembed = new Discord.RichEmbed()
    .setDescription("Reports")
    .setColor("#62a4f5")
-   .addField("Reported User", `${rUser} with ID: ${rUser.id}`);
+   .addField("Reported User", `${rUser} with ID: ${rUser.id}`)
    .addField("Reported by", `${message.author} with ID: ${message.author.id}`)
    .addField("Channel", message.channel)
    .addField("Report time", message.createdAt)

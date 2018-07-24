@@ -64,7 +64,7 @@ if(cmd === `${prefix}dm`){
   
 if (cmd === `${prefix}report`){
 
-   let rUser = message.guild.member(message.mentions.users.first() || message.guilds.members.get(args[0])));
+   let rUser = message.guild.member(message.mentions.users.first() || message.guilds.members.get(args[0]));
    if(!rUser) return message.channel.send("Sorry couldnt find user :unamused:");
    let reason = args.join(" ").slice(22);
 

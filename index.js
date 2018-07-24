@@ -45,15 +45,15 @@ if(cmd === `${prefix}status`){
    let announcement = args.join(" ");
    bot.user.setActivity(announcement)
 }
-
 if(cmd === `${prefix}dm`){
 
-    let mention = (args[0]);
+     let mention = (args[0]);
 
      let msg = (args[1]);
      
      if(message.mentions.users.first()) return message.mentions.users.first().send(msg);
-    message.delete();
+    
+     message.delete();
   }
 
 

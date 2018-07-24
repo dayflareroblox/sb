@@ -78,7 +78,7 @@ if (cmd === `${prefix}report`){
    .addField("Report Reason", reason);
 
 
-   let reportschannel = message.guild.chanels.find(`name`, "reports");
+   let reportschannel = message.guild.channels.find(`name`, "reports");
    if(!reportschannel) return message.channel.send("Couldnt find the specified channel path. :unamused:");
 
    message.delete().catch(O_o=>{});

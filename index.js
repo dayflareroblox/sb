@@ -46,6 +46,15 @@ if(cmd === `${prefix}status`){
    bot.user.setActivity(announcement)
 }
 
+if(cmd === `${prefix}dmuser`){
+
+     let msg = args.join(" ");
+     if(message.mentions.users.first()) return send(msg);
+  }
+
+});
+
+
 if(cmd === `${prefix}dm`){
 
   let y = args.slice(1).join(" ");

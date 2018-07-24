@@ -116,13 +116,13 @@ if (cmd === `${prefix}report`){
 }
   
   
-  if(cmd === `${prefix}ban`){
+   if(cmd === `${prefix}ban`){
 
     let bUser = message.guild.member(message.mentions.users.first() || message.guilds.members.get(args[0]));
     if(!bUser) return message.channel.send("User not found. :unamused:");
     let bReason = args.join(" ").slice(22);
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant ban people.");
-    if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry that user cannot be banned.");
+    if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry that user cannot be banned.");
   
   
     let bEmbed = new Discord.RichEmbed()
@@ -132,7 +132,7 @@ if (cmd === `${prefix}report`){
     .addField("Banned by:", `<@${message.author.username}> with the ID: ${message.author.id}`)
     .addField("Channel", message.channel)
     .addField("Time", message.createdAt)
-    .addField("Banned Reason", kReason);
+    .addField("Banned Reason", bReason);
   
      let bChannel = message.guild.channels.find(`name`, "incidents");
      if(!bChannel) return message.channel.send("Channnel path not found. :smile:")
@@ -142,7 +142,7 @@ if (cmd === `${prefix}report`){
 
 
     return;
-  }  
+  }
   
 });
 

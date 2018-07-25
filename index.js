@@ -44,8 +44,9 @@ bot.on("message", async message => {
      .setTitle(message.author.username)
      .setFooter("This bot was made by ScriptedBuilderz.")
      .setColor("#62a4f5")
-     .setThumbnail("https://cdn.discordapp.com/attachments/471041267673989130/471055062701965333/lol.jpg")
+     .setThumbnail("https://cdn.discordapp.com/attachments/471654505830940672/471654608511434752/skylounge.png")
      message.channel.send(aembed);
+     message.channel.send("@everyone")
   }
 
 if(cmd === `${prefix}status`){

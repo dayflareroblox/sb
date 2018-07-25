@@ -41,6 +41,7 @@ bot.on("message", async message => {
 
      let announcement = args.join(" ");
      let aembed = new Discord.RichEmbed()
+     
      .setDescription(announcement)
      .setTitle(message.author.username)
      .setFooter("This bot was made by ScriptedBuilderz.")
@@ -53,6 +54,8 @@ bot.on("message", async message => {
 if(cmd === `${prefix}status`){
 
    let announcement = args.join(" ");
+  
+ if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant say things.");  
    bot.user.setActivity(announcement)
 }
 if(cmd === `${prefix}dm`){
@@ -60,8 +63,9 @@ if(cmd === `${prefix}dm`){
      let mention = (args[0]);
      let msg = (args[1]);
      
+   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant DM people.");
      if(message.mentions.users.first()) return message.mentions.users.first().send(msg);
-     message.delete().catch(O_o=>{});
+     message.delete();
   }
 
 
@@ -104,8 +108,8 @@ if (cmd === `${prefix}report`){
   let kUser = message.guild.member(message.mentions.users.first() || message.guilds.members.get(args[0]));
   if(!kUser) return message.channel.send("User not found. :unamused:");
   let kReason = args.join(" ").slice(22);
-  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant kick people.");
-  if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry that user cannot be kicked.");
+  if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("Sorry you cant kick people.");
+  if(kUser.hasPermission("KICK_MEMBERS")) return message.channel.send("Sorry that user cannot be kicked.");
 
 
   let kEmbed = new Discord.RichEmbed()
@@ -133,8 +137,8 @@ if (cmd === `${prefix}report`){
     let bUser = message.guild.member(message.mentions.users.first() || message.guilds.members.get(args[0]));
     if(!bUser) return message.channel.send("User not found. :unamused:");
     let bReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant ban people.");
-    if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry that user cannot be banned.");
+    if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("Sorry you cant ban people.");
+    if(bUser.hasPermission("BAN_MEMBERS")) return message.channel.send("Sorry that user cannot be banned.");
   
   
     let bEmbed = new Discord.RichEmbed()

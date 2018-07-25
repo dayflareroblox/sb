@@ -1,3 +1,4 @@
+
 const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 
@@ -32,6 +33,63 @@ bot.on("message", async message => {
      message.member.addRole(message.guild.roles.find("name", "🍔Member🍔")); 
   }
   
+ if(cmd === `${prefix}information`){
+    if(!message.member.hasPermission("ADMINISTRATOR")) return;
+    message.channel.send("Hello, if you want information on me to continue then say !info1");
+  return;
+}
+
+if(cmd === `${prefix}mute`)
+{
+  let toMute = message.mentions.members.first() || message.guild.members.get(args[0]);
+  if(!toMute) return message.channel.send(`Incorect usage. | ${prefix}mute {user mention} {reason}`)
+  if(!toMute.id === message.author.id) return message.channel.send("You cannot mute yourself.");
+
+  let role = message.guild.roles.find(r => r.name === "Muted");
+  if(!role) {
+    try {
+      role = await message.guild.createRole({
+        name: "Muted",
+        color: "#000000",
+        permissions: []
+      });
+
+      message.guild.channels.forEach(async (channel, id) => {
+        await channel.overwritePermissions(role, {
+          SEND_MESSAGES: false,
+          ADD_REACTIONS: false,
+          CONNECT: false,
+          SPEAK: false
+        });
+      });
+    } catch(e) {
+      console.log(e.stack);
+    }
+  }
+   
+ 
+if(cmd === `${prefix}unmute`)
+{
+
+    let toMute = message.mentions.members.first() || message.guild.members.get(args[0]);
+    if(!toMute) return message.channel.send(`Incorect usage. | ${prefix}unmute {user mention}`);
+
+    let role = message.guild.roles.find(r => r.name === "Muted");
+
+    if(!role || !toMute.roles.has(role.id)) return message.channel.send("This user is not muted!");
+
+    await toMute.removeRole(role);
+
+        console.log(`Unmuted ${toMute.tag}`)
+        message.channel.send(`Unmuted ${toMute}.`);
+        bot.channels.get(config.security).send({embed: {
+            title: "**User unmuted**",
+            color: 0xe8da1e,
+            description: `:warning:   Manual unmute\n► Unmuted: **<@${toMute}>**\n► Manual unmuter **<@${message.author.id}>**`
+        }});
+}
+
+   
   if(cmd === `${prefix}botinfo`){
 
     let botembed = new Discord.RichEmbed()

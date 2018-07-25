@@ -81,7 +81,7 @@ if(cmd === `${prefix}mute`)
 
         console.log(`Unmuted ${toMute.tag}`)
         message.channel.send(`Unmuted ${toMute}.`);
-        bot.channels.get(config.security).send({embed: {
+        bot.channels.get(config.incidents).send({embed: {
             title: "**User unmuted**",
             color: 0xe8da1e,
             description: `:warning:   Manual unmute\n► Unmuted: **<@${toMute}>**\n► Manual unmuter **<@${message.author.id}>**`
@@ -95,7 +95,7 @@ if(cmd === `${prefix}mute`)
   if(!reason) return message.channel.send("No reason added.");
   
       message.channel.send(`Muted ${toMute}`);
-      bot.channels.get(config.security).send({embed: {
+      bot.channels.get(config.incidents).send({embed: {
         title: "**User muted**",
         color: 0xe8da1e,
         description: `:warning:   Manual mute\n► Muted: **${toMute}**\n► Muted by: **<@${message.author.id}>**\n► reason: **${reason}**\n►Time: **perm**`

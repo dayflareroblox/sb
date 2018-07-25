@@ -68,8 +68,9 @@ if(cmd === `${prefix}dm`){
      
    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant DM people.");
      if(message.mentions.users.first()) return message.mentions.users.first().send(msg);
-     message.delete();
-     message.channel.send("User has been DM'ed! Thanks.")
+      message.channel.send("User has been DM'ed! Thanks.");
+   message.delete();
+    
   }
 
 

@@ -8,7 +8,7 @@ bot.on("guildMemberAdd", function(member){
 });
 
 bot.on('ready',() => {
-bot.user.setActivity("with depression", {
+bot.user.setActivity("on SkyNet.org", {
       type: "STREAMING",
       url: "https://www.twitch.tv/monstercat"
     });

@@ -67,7 +67,22 @@ if(cmd === `${prefix}mute`)
     }
   }
 
-   if(cmd === `${prefix}unmute`)
+
+  if(toMute.roles.has(role.id)) return message.channel.send("This user is already muted!");
+
+  let reason = args.slice(1).join(" ");
+  if(!reason) return message.channel.send("No reason added.");
+  
+      message.channel.send(`Muted ${toMute}`);
+      bot.channels.get(471615529988128768).send({embed: {
+        title: "**User muted**",
+        color: 0xe8da1e,
+        description: `:warning:   Manual mute\n► Muted: **${toMute}**\n► Muted by: **<@${message.author.id}>**\n► reason: **${reason}**\n►Time: **perm**`
+      }});
+  await toMute.addRole(role);
+}
+
+if(cmd === `${prefix}unmute`)
 {
 
     let toMute = message.mentions.members.first() || message.guild.members.get(args[0]);
@@ -81,7 +96,7 @@ if(cmd === `${prefix}mute`)
 
         console.log(`Unmuted ${toMute.tag}`)
         message.channel.send(`Unmuted ${toMute}.`);
-        bot.channels.get(config.incidents).send({embed: {
+        bot.channels.get(471615529988128768).send({embed: {
             title: "**User unmuted**",
             color: 0xe8da1e,
             description: `:warning:   Manual unmute\n► Unmuted: **<@${toMute}>**\n► Manual unmuter **<@${message.author.id}>**`

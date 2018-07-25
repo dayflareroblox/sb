@@ -23,7 +23,8 @@ bot.on("message", async message => {
   let args = messageArray.slice(1);
 
   if(cmd === `${prefix}verify`){
-    message.member.addRole(message.guild.roles.find("name", "Verified member"));
+
+     message.member.addRole(message.guild.roles.find("name", "Verified member"));
     message.channel.send("Your all ranked up! :smile:");
 
      message.member.addRole(message.guild.roles.find("name", "🍔Member🍔")); 
@@ -68,6 +69,7 @@ if(cmd === `${prefix}dm`){
    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant DM people.");
      if(message.mentions.users.first()) return message.mentions.users.first().send(msg);
      message.delete();
+   message.channel.send("User has been DM'ed! Thanks.");
   }
 
 

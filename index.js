@@ -1,4 +1,4 @@
-const botconfig = require("./botconfig.json");
+:const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 
 const bot = new Discord.Client({disableEveryone: true});
@@ -19,7 +19,7 @@ bot.on("message", async message => {
 
   if(cmd === `${prefix}verify`){
     message.member.addRole(message.guild.roles.find("name", "Verified member"));
-    message.channel.send("Your all ranked up! :smile");
+    message.channel.send("Your all ranked up! :smile:");
   }
   
   if(cmd === `${prefix}botinfo`){

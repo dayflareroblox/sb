@@ -7,7 +7,12 @@ bot.on("guildMemberAdd", function(member){
    member.guild.channels.find("name", "welcome").sendMessage(member.toString() + "Welcome to SkyLounge! :smile: Make sure to read #how-to-be-verified to know how to access more channels! :smile:");
 });
 
-bot.user.setActivity("on SkyNet.org",{ type: 'STREAMING' });
+bot.on('ready',() => {
+bot.user.setActivity("with depression", {
+      type: "STREAMING",
+      url: "https://www.twitch.tv/monstercat"
+    });
+})
 
 bot.on("message", async message => {
   if(message.author.bot) return;

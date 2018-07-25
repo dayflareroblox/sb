@@ -3,9 +3,13 @@ const Discord = require("discord.js");
 
 const bot = new Discord.Client({disableEveryone: true});
 
+bot.on("guildMemberAdd", function(member){
+   member.guild.channels.find("name", "welcome").sendMessage(member.toString() + "Welcome to SkyLounge! :smile:");
+});
+
 bot.on("ready", async message => {
   console.log(`${bot.user.username} is online`);
-  bot.user.setActivity("on hax.com");
+  bot.user.setActivity("on SkyBot.com");
 });
 
 bot.on("message", async message => {

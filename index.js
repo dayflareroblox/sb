@@ -24,7 +24,8 @@ bot.on("message", async message => {
   if(cmd === `${prefix}verify`){
     message.member.addRole(message.guild.roles.find("name", "Verified member"));
     message.channel.send("Your all ranked up! :smile:");
-    message.member.addRole(message.guild.roles.find("name", "🍔Member🍔")); 
+
+     message.member.addRole(message.guild.roles.find("name", "🍔Member🍔")); 
   }
   
   if(cmd === `${prefix}botinfo`){
@@ -94,7 +95,7 @@ if (cmd === `${prefix}report`){
 
    message.delete().catch(O_o=>{});
    reportschannel.send(reportembed);
-
+   reportschannel.send("@💕Moderator💕")
   return;
 }
   

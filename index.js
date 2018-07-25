@@ -24,6 +24,7 @@ bot.on("message", async message => {
   if(cmd === `${prefix}verify`){
     message.member.addRole(message.guild.roles.find("name", "Verified member"));
     message.channel.send("Your all ranked up! :smile:");
+    message.member.addRole(message.guild.roles.find("name", "🍔Member🍔")); 
   }
   
   if(cmd === `${prefix}botinfo`){

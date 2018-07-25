@@ -7,7 +7,7 @@ bot.on("guildMemberAdd", function(member){
    member.guild.channels.find("name", "welcome").sendMessage(member.toString() + "Welcome to SkyLounge! :smile: Make sure to read #how-to-be-verified to know how to access more channels! :smile:");
 });
 
-client.user.setActivity("with depression", {
+bot.user.setActivity("with depression", {
       type: "STREAMING",
       url: "https://www.twitch.tv/monstercat"
     });

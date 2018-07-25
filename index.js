@@ -17,7 +17,8 @@ bot.on("message", async message => {
   if(message.channel.type === "dm") return;
 
   let prefix = botconfig.prefix;
-  let messageArray = message.content.split(" ");
+
+   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
 
@@ -49,6 +50,7 @@ bot.on("message", async message => {
      .setThumbnail("https://cdn.discordapp.com/attachments/471654505830940672/471654608511434752/skylounge.png")
      message.channel.send(aembed);
      message.channel.send("@everyone")
+     message.delete();
   }
 
 if(cmd === `${prefix}status`){

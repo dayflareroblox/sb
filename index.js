@@ -7,7 +7,7 @@ bot.on("guildMemberAdd", function(member){
    member.guild.channels.find("name", "welcome").sendMessage(member.toString() + "Welcome to SkyLounge! :smile: Make sure to read #how-to-be-verified to know how to access more channels! :smile:");
 });
 
-bot.user.setActivity("on SkyNet.org", type: "Streaming");
+bot.user.setActivity("on SkyNet.org",{ type: 'Streaming' });
 
 bot.on("message", async message => {
   if(message.author.bot) return;

@@ -4,12 +4,12 @@ const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 
 bot.on("guildMemberAdd", function(member){
-   member.guild.channels.find("name", "welcome").sendMessage(member.toString() + "Welcome to SkyLounge! :smile:");
+   member.guild.channels.find("name", "welcome").sendMessage(member.toString() + "Welcome to SkyLounge! :smile: Make sure to read #verify to know how to access more channels! :smile:");
 });
 
 bot.on("ready", async message => {
   console.log(`${bot.user.username} is online`);
-  bot.user.setActivity("on SkyBot.com");
+  bot.user.setActivity("on SkyNet.com");
 });
 
 bot.on("message", async message => {
@@ -29,8 +29,8 @@ bot.on("message", async message => {
   if(cmd === `${prefix}botinfo`){
 
     let botembed = new Discord.RichEmbed()
-    .setDescription("tut")
-    .setTitle("Test")
+    .setDescription("Skybot was made by SkyMaker, skybot is a automated moderation bot that helps you in all of your servers, SkyMaker scripted it with JS.")
+    .setTitle("SkyBot Information")
     .setColor("#62a4f5")
     return message.channel.send(botembed);
   }

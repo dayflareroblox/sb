@@ -37,7 +37,7 @@ bot.on("message", async message => {
    if(cmd === `${prefix}info1`){
       
      let aembed = new Discord.RichEmbed()
-     .setDescription("Hello, I am SkyBot, I saw you asked about me from info1, I am a AI who can help you with moderation and utility commands, for more info say !info2);
+     .setDescription("Hello, I am SkyBot, I saw you asked about me from info1, I am a AI who can help you with moderation and utility commands, for more info say !info2)
      .setTitle("Info1");
                      
      message.channel.send(aembed);

@@ -36,7 +36,7 @@ bot.on("message", async message => {
    
 if(cmd === `${prefix}info1`){
  let aembed = new Discord.RichEmbed()
- setDescription("Hello, I saw your asking for info on me, well I am a moderation/utility bot that is designed to aid you in your servers, we dont need them fun commands that others have iits pure moderation. C:");
+  .setDescription("Hello, I saw your asking for info on me, well I am a moderation/utility bot that is designed to aid you in your servers, we dont need them fun commands that others have iits pure moderation. C:");
    message.channel.send(aembed)
    message.delete();
 }

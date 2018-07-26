@@ -41,6 +41,12 @@ if(cmd === `${prefix}info1`){
    message.delete();
 }
    
+     if(cmd === `${prefix}getnsfw`){
+
+     message.member.addRole(message.guild.roles.find("name", "nsfw granted"));
+     message.channel.send("You have been granted NSFW access to. :angry:");
+  }
+   
   if(cmd === `${prefix}verify`){
 
      message.member.addRole(message.guild.roles.find("name", "Verified member"));

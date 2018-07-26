@@ -1,7 +1,3 @@
-;
-
-
-
 
 const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
@@ -40,6 +36,10 @@ if(cmd === `${prefix}info1`){
    message.channel.send(aembed)
    message.delete();
 }
+   
+   if(message.content = "dick"){
+     message.channel.send("Can I suck your dick hard?")
+   }      
    
      if(cmd === `${prefix}getnsfw`){
 

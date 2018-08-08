@@ -8,6 +8,12 @@ bot.on("guildMemberAdd", function(member){
    member.guild.channels.find("name", "welcome").sendMessage(member.toString() + "Welcome to SkyLounge! :smile: Make sure to read #instructions to know how to access more channels! :smile:");
 });
 
+bot.on('message', msg => {
+  if (msg.content === 'fuck') {
+    msg.reply("`You have just said a banned word, Carry on and you will find yourself muted.`  <@476826897192452096>");
+  }
+});
+
 bot.on('ready',() => {
 bot.user.setActivity("on SkyNet.org", {
       type: "STREAMING",
@@ -93,7 +99,7 @@ if(cmd === `${prefix}status`){
 if(cmd === `${prefix}dm`){
 
      let mention = (args[0]);
-     let msg = (args[1]);
+     let msg = args.slice("1");
      
    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant DM people.");
      if(message.mentions.users.first()) return message.mentions.users.first().send(msg);
@@ -133,7 +139,7 @@ if (cmd === `${prefix}report`){
 
    message.delete().catch(O_o=>{});
    reportschannel.send(reportembed);
-   reportschannel.send("@💕Moderator💕")
+   reportschannel.send(<@476826897192452096>)
   return;
 }
   

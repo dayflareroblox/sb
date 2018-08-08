@@ -139,7 +139,7 @@ if (cmd === `${prefix}report`){
 
    message.delete().catch(O_o=>{});
    reportschannel.send(reportembed);
-   reportschannel.send(<@476826897192452096>)
+   reportschannel.send("<@476826897192452096>");
   return;
 }
   

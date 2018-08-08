@@ -1,6 +1,8 @@
 
 const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
+const LinkFilter = ["http://", "https://", ".org", ".com", ".ru", ".gg", ".net"];
+  if(!LinkFilter.some(word => message.content.includes(word))) return;
 
 const bot = new Discord.Client({disableEveryone: true});
 
@@ -14,14 +16,18 @@ bot.on('message', msg => {
   }
 });
 
-
-
 bot.on('ready',() => {
 bot.user.setActivity("on SkyNet.org", {
       type: "STREAMING",
       url: "https://www.twitch.tv/monstercat"
     });
 })
+
+bot.on('message', message => {
+const LinkFilter = ["http://", "https://", ".org", ".com", ".ru", ".gg", ".net"];
+  if(!LinkFilter.some(word => message.content.includes(word))) return;
+   msg.channel.send("``Sorry do not post link's here, If you do it anymore, you will be muted for spam");
+});
 
 bot.on("message", async message => {
   if(message.author.bot) return;

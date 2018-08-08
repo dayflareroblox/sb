@@ -10,7 +10,7 @@ bot.on("guildMemberAdd", function(member){
 
 bot.on('message', msg => {
   if (msg.content === 'fuck') {
-    msg.reply("`You have just said a banned word, Carry on and you will find yourself muted.`  <@476826897192452096>");
+    msg.reply("`You have just said a banned word, Carry on and you will find yourself muted.`  <@&471612597863448576>");
   }
 });
 
@@ -139,7 +139,7 @@ if (cmd === `${prefix}report`){
 
    message.delete().catch(O_o=>{});
    reportschannel.send(reportembed);
-   reportschannel.send("<@476826897192452096>");
+   reportschannel.send("<@&471612597863448576>");
   return;
 }
   

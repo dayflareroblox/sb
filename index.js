@@ -1,8 +1,6 @@
 
 const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
-const LinkFilter = ["http://", "https://", ".org", ".com", ".ru", ".gg", ".net"];
-  if(!LinkFilter.some(word => message.content.includes(word))) return;
 
 const bot = new Discord.Client({disableEveryone: true});
 
@@ -15,6 +13,8 @@ bot.on('message', msg => {
     msg.reply("`You have just said a banned word, Carry on and you will find yourself muted.`  <@&471612597863448576>");
   }
 });
+
+
 
 bot.on('ready',() => {
 bot.user.setActivity("on SkyNet.org", {

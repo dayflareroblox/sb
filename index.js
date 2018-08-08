@@ -23,11 +23,6 @@ bot.user.setActivity("on SkyNet.org", {
     });
 })
 
-bot.on('message', message => {
-const LinkFilter = ["http://", "https://", ".org", ".com", ".ru", ".gg", ".net"];
-  if(!LinkFilter.some(word => message.content.includes(word))) return;
-   msg.channel.send("``Sorry do not post link's here, If you do it anymore, you will be muted for spam");
-});
 
 bot.on("message", async message => {
   if(message.author.bot) return;

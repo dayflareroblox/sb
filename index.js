@@ -1,8 +1,6 @@
 
 const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
-const LinkFilter = ["http://", "https://", ".org", ".com", ".ru", ".gg", ".net"];
-  if(!LinkFilter.some(word => message.content.includes(word))) return;
 
 const bot = new Discord.Client({disableEveryone: true});
 

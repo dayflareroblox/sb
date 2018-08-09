@@ -33,6 +33,25 @@ bot.on("message", async message => {
  return;
 }  
    
+   
+if(cmd === `${prefix}addrole`){
+
+    let mention = message.mentions.members.first() || message.guild.members.get(args[0]);
+    let role = message.mentions.roles.first() || message.guild.roles.get(args[1]);
+
+    message.delete(2000);
+     
+       if(!mention) return message.channel.send("Cant find user or not specifed.");
+       if(!role) return message.channel.send("Could not find that role.");
+
+       if(mention.roles.has(role.id)) return message.channel.send("That user already has that role.");
+
+       mention.addRole(role);
+
+       message.channel.send("Added " + role.name " to " + mention.user.name ".").then(msg => msg.delete(10000));
+  }
+   
+   
 if(cmd === `${prefix}info1`){
  let aembed = new Discord.RichEmbed()
   .setDescription("Hello, I saw your asking for info on me, well I am a moderation/utility bot that is designed to aid you in your servers, we dont need them fun commands that others have iits pure moderation. C:");

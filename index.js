@@ -39,9 +39,7 @@ if(cmd === `${prefix}addrole`){
 
     let mention = message.mentions.members.first() || message.guild.members.get(args[0]);
     let role = message.mentions.roles.first() || message.guild.roles.get(args[1]);
-    console.log("Done")
 
-    message.delete(2000);
      
        if(!mention) return message.channel.send("Cant find user or not specifed.");
        if(!role) return message.channel.send("Could not find that role.");
@@ -50,7 +48,7 @@ if(cmd === `${prefix}addrole`){
 
        mention.addRole(role);
 
-       message.channel.send("Added " + role.name " to " + mention.user.name ".").then(msg => msg.delete(10000));
+       message.channel.send("Added " + role.name  + " to " + mention.user.name + ".").then(msg => msg.delete(10000));
   }
    
    

@@ -100,7 +100,7 @@ if(cmd === `${prefix}status`){
 if(cmd === `${prefix}dm`){
 
      let mention = args[0];
-     const msg = args.join(" ").slice("1");
+     const msg = args.slice("1").join(" ");
      
    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant DM people.");
      if(message.mentions.users.first()) return message.mentions.users.first().send(msg);

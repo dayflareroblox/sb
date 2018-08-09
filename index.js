@@ -1,4 +1,5 @@
 
+
 const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 
@@ -38,6 +39,7 @@ if(cmd === `${prefix}addrole`){
 
     let mention = message.mentions.members.first() || message.guild.members.get(args[0]);
     let role = message.mentions.roles.first() || message.guild.roles.get(args[1]);
+    console.log("Done")
 
     message.delete(2000);
      

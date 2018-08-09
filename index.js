@@ -100,10 +100,10 @@ if(cmd === `${prefix}status`){
 if(cmd === `${prefix}dm`){
 
      let mention = args[0];
-     let msg = args.slice("1");
+     const msg = args.slice("1");
      
    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant DM people.");
-     if(message.mentions.users.first()) return bot.fetchUser(message.mentions.users.first().user.id).user.send(msg);
+     if(message.mentions.users.first()) return message.mentions.users.first().send(msg);
       message.channel.send("User has been DM'ed! Thanks.");
    message.delete();
     

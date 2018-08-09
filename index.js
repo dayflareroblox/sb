@@ -99,7 +99,7 @@ if(cmd === `${prefix}status`){
 }
 if(cmd === `${prefix}dm`){
 
-     let mention = (args[0]);
+     let mention = args[0];
      let msg = args.slice("1");
      
    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant DM people.");

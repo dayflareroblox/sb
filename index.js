@@ -48,7 +48,7 @@ if(cmd === `${prefix}addrole`){
 
        mention.addRole(role);
 
-       message.channel.send("Added " + role.name  + " to " + mention.user.name + ".").then(msg => msg.delete(10000));
+       message.channel.send("Added " + role.name  + " to " + mention.name + ".").then(msg => msg.delete(10000));
   }
    
    

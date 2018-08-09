@@ -9,7 +9,7 @@ bot.on("guildMemberAdd", function(member){
 });
 
 bot.on('message', msg => {
-  if (msg.content === 'fuck') {
+  if (msg.content === 'fuck','cunt','bitch','faggot','FUCK','DICK','dick','cock','pussy','vagina') {
     msg.reply("`You have just said a banned word, Carry on and you will find yourself muted.`  <@&471612597863448576>");
   }
 });

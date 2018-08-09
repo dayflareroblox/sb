@@ -8,11 +8,7 @@ bot.on("guildMemberAdd", function(member){
    member.guild.channels.find("name", "welcome").sendMessage(member.toString() + "Welcome to SkyLounge! :smile: Make sure to read <#471615845190205441> to know how to access more channels! :smile:");
 });
 
-bot.on('message', msg => {
-  if (msg.content === 'fuck','cunt','bitch','faggot','FUCK','DICK','dick','cock','pussy','vagina') {
-    msg.reply("`You have just said a banned word, Carry on and you will find yourself muted.`  <@&471612597863448576>");
-  }
-});
+
 
 bot.on('ready',() => {
 bot.user.setActivity("on SkyNet.org", {

@@ -86,7 +86,7 @@ if(cmd === `${prefix}info1`){
      .setColor("#62a4f5")
      .setThumbnail("https://cdn.discordapp.com/attachments/471654505830940672/471654608511434752/skylounge.png")
      message.channel.send(aembed);
-     message.channel.send("<@&477178469135024150>")
+     message.channel.send("<@&477180353786937355>")
      message.delete();
   }
 

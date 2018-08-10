@@ -67,7 +67,7 @@ if(cmd === `${prefix}addrole`){
      message.member.addRole(message.guild.roles.find("name", "Verified member"));
      let aembed = new Discord.RichEmbed()
      .setTitle("Verification Process")
-     .setField("Progress:", "Verified, Thanks for using Server Moderation")
+     .addField("Progress:", "Verified, Thanks for using Server Moderation")
      message.channel.send(aembed);
      
      message.member.addRole(message.guild.roles.find("name", "🍔Member🍔")); 

@@ -222,9 +222,6 @@ if (cmd === `${prefix}report`){
   if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply("Sorry you cant kick people.");
   if(kUser.hasPermission("KICK_MEMBERS")) return message.reply("Sorry that user cannot be kicked.");
 
-      let modRole = message.guild.roles.find("name", "💕Moderator💕");
-      if(message.member.roles.has(modRole.id)) {
-
   let kEmbed = new Discord.RichEmbed()
   .setDescription("/KICK/")
   .setColor("#62a4f5")

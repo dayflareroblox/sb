@@ -9,7 +9,7 @@ bot.on("guildMemberAdd", function(member){
    member.guild.channels.find("name", "welcome").sendMessage(member.toString() + "Welcome to SkyLounge! :smile: Make sure to read <#471615845190205441> to know how to access more channels! :smile:");
 });
 
-
+//---------------------------------------------------------------\\//---------------------------------------------------------------\\
 
 bot.on('ready',() => {
 bot.user.setActivity("SmartMod.V.1.0.0", {
@@ -18,6 +18,7 @@ bot.user.setActivity("SmartMod.V.1.0.0", {
     });
 })
 
+//---------------------------------------------------------------\\//---------------------------------------------------------------\\
 
 bot.on("message", async message => {
 
@@ -35,13 +36,20 @@ bot.on("message", async message => {
   message.channel.bulkDelete(args[0]);
  return;
 }  
-       
+ 
+//---------------------------------------------------------------\\//---------------------------------------------------------------\\     
+   
  if(cmd === `${prefix}invite`){
-  message.channel.send("https://discordapp.com/oauth2/authorize?client_id=477392293238800395&permissions=2080898295&scope=bot");
-  message.channel.send("***THIS INVITE LINK WILL ONLY BE AVAILABLE FOR A SHORT PERIOD OF TIME, SPAMMING USE OF IT WIL RESULT IN YOU BEING BLACKISTED FROM USE OF THIS BOT***");  
+    
+    let aembed = new Discord.RichEmbed()
+    .setTitle("Bot Invite link")
+    .addField("Link:", "https://discordapp.com/oauth2/authorize?client_id=477392293238800395&permissions=2080898295&scope=bot")
+    .addField("Precautionary warning", "***THIS INVITE LINK WILL ONLY BE AVAILABLE FOR A SHORT PERIOD OF TIME, SPAMMING USE OF IT WIL RESULT IN YOU BEING BLACKISTED FROM USE OF THIS BOT***")
+    message.channel.send(aembed)
   
  }   
  
+ //---------------------------------------------------------------\\//---------------------------------------------------------------\\ 
    
 if(cmd === `${prefix}addrole`){
 
@@ -61,7 +69,7 @@ if(cmd === `${prefix}addrole`){
        message.channel.send("Added " + role.name  + " to " + mention.name + ".").then(msg => msg.delete(10000));
   }
    
-   
+ //---------------------------------------------------------------\\//---------------------------------------------------------------\\  
    
   if(cmd === `${prefix}verify`){
 
@@ -76,6 +84,8 @@ if(cmd === `${prefix}addrole`){
      message.member.addRole(message.guild.roles.find("name", "🍔Member🍔")); 
   }
   
+ //---------------------------------------------------------------\\//---------------------------------------------------------------\\  
+   
  if(cmd === `${prefix}information`){
     let aembed = new Discord.RichEmbed()
     .setTitle("Information About SM.")
@@ -88,7 +98,7 @@ if(cmd === `${prefix}addrole`){
     message.channel.send(aembed);
 }
 
-
+//---------------------------------------------------------------\\//---------------------------------------------------------------\\
 
   if(cmd === `${prefix}announce`){
 
@@ -105,6 +115,8 @@ if(cmd === `${prefix}addrole`){
      message.delete();
   }
 
+ //---------------------------------------------------------------\\//---------------------------------------------------------------\\  
+   
 if(cmd === `${prefix}status`){
 
    let announcement = args.join(" ");
@@ -117,6 +129,9 @@ if(cmd === `${prefix}status`){
   .setDescription("The Bot status has been changed, bear in mind this command effects ``EVERY`` Server the bot is in.")
   message.channel.send(aembed);
 }
+   
+//---------------------------------------------------------------\\//---------------------------------------------------------------\\   
+   
 if(cmd === `${prefix}dm`){
 
      let mention = args[0];
@@ -129,7 +144,8 @@ if(cmd === `${prefix}dm`){
     
   }
 
-
+//---------------------------------------------------------------\\//---------------------------------------------------------------\\
+   
  if(cmd === `${prefix}say`){
 
       if(!message.member.hasPermission("ADMINISTRATOR")) return;
@@ -139,6 +155,8 @@ if(cmd === `${prefix}dm`){
       message.delete();
 }
   
+//---------------------------------------------------------------\\//---------------------------------------------------------------\\  
+   
 if (cmd === `${prefix}report`){
 
    let rUser = message.guild.member(message.mentions.users.first() || message.guilds.members.get(args[0]));
@@ -164,6 +182,8 @@ if (cmd === `${prefix}report`){
   return;
 }
   
+ //---------------------------------------------------------------\\//---------------------------------------------------------------\\  
+   
   if(cmd === `${prefix}kick`){
 
   let kUser = message.guild.member(message.mentions.users.first() || message.guilds.members.get(args[0]));
@@ -191,7 +211,8 @@ if (cmd === `${prefix}report`){
 
   return;
 }
-  
+
+ //---------------------------------------------------------------\\//---------------------------------------------------------------\\  
   
    if(cmd === `${prefix}ban`){
 

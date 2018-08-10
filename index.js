@@ -33,6 +33,12 @@ bot.on("message", async message => {
   message.channel.bulkDelete(args[0]);
  return;
 }  
+
+ if(cmd === `${prefix}unmute`}{
+   message.member.removeRoles(['477388920628314112'])
+  .then(console.log)
+  .catch(console.error);    
+ }    
    
    
 if(cmd === `${prefix}addrole`){

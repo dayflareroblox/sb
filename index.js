@@ -128,6 +128,10 @@ if(cmd === `${prefix}addrole`){
   
 if(cmd ===  `${prefix}botupdt`){
    
+   
+     let modRole = message.guild.roles.find("name", "💫Bot Developer💫");
+     if(message.member.roles.has(modRole.id)) {
+   
    let updt = args.join(" ");
    let aembed = new Discord.RichEmbed()
    
@@ -139,7 +143,10 @@ if(cmd ===  `${prefix}botupdt`){
    message.channel.send("<@&477435472050913290>");
    message.channel.send(aembed);            
 }   
-   
+   else {
+      message.reply("Incorrect Permissions.")
+   }
+}
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\ 
    
 if(cmd === `${prefix}status`){

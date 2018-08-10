@@ -110,13 +110,29 @@ if(cmd === `${prefix}addrole`){
      .setTitle(message.author.username)
      .setFooter("**Server Moderation Copyright**")
      .setColor("#62a4f5")
-     .addField("This announcement doesnt effect the will of the bot, but who is calling the command! :warning:")
+     .addField("Warning:", "This announcement doesnt effect the will of the bot, but who is calling the command!")
      message.channel.send(aembed);
-     message.channel.send("<@&477180353786937355>")
+     message.channel.send("<@&477434574666858496>")
      message.delete();
   }
 
- //---------------------------------------------------------------\\//---------------------------------------------------------------\\  
+ //---------------------------------------------------------------\\//---------------------------------------------------------------\\
+  
+if(cmd ===  `${prefix}botupdt`){
+   
+   let updt = args.join(" ");
+   let aembed = new Discord.RichEmbed()
+   
+   .setTitle("Bot Update")
+   .setDescription("A bot update has occured, the following assets have been updated.")
+   .addField("Update:", updt)
+   .setColor("#62a4f5")
+   
+   message.channel.send("<@&477434574666858496>");
+   message.channel.send(aembed);            
+}   
+   
+ //---------------------------------------------------------------\\//---------------------------------------------------------------\\ 
    
 if(cmd === `${prefix}status`){
 

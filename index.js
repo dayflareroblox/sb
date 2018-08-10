@@ -44,8 +44,6 @@ if(cmd === `${prefix}rrole`){
        if(!mention) return message.channel.send("Cant find user or not specifed.");
        if(!role) return message.channel.send("Could not find that role.");
 
-       if(mention.roles.has(role.id)) return message.channel.send("That user already has that role.");
-
        mention.removeRole(role);
 
        message.channel.send("Added " + role.name  + " to " + mention.name + ".").then(msg => msg.delete(10000));

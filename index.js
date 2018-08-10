@@ -45,6 +45,7 @@ bot.on("message", async message => {
     .setTitle("Bot Invite link")
     .addField("Link:", "https://discordapp.com/oauth2/authorize?client_id=477392293238800395&permissions=2080898295&scope=bot")
     .addField("Precautionary warning", "***THIS INVITE LINK WILL ONLY BE AVAILABLE FOR A SHORT PERIOD OF TIME, SPAMMING USE OF IT WIL RESULT IN YOU BEING BLACKISTED FROM USE OF THIS BOT***")
+    .setColor("#bcfbf2")
     message.channel.send(aembed)
   
  }   

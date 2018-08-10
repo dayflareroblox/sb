@@ -33,21 +33,6 @@ bot.on("message", async message => {
   message.channel.bulkDelete(args[0]);
  return;
 }  
-   
-
-if(cmd === `${prefix}rrole`){
-
-    let mention = message.mentions.members.first() || message.guild.members.get(args[0]);
-    let role = message.mentions.roles.first() || message.guild.roles.get(args[1]);
-
-     
-       if(!mention) return message.channel.send("Cant find user or not specifed.");
-       if(!role) return message.channel.send("Could not find that role.");
-
-       mention.removeRole(role);
-
-       message.channel.send("Added " + role.name  + " to " + mention.name + ".").then(msg => msg.delete(10000));
-  }   
        
        
 if(cmd === `${prefix}addrole`){

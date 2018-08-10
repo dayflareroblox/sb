@@ -35,11 +35,21 @@ bot.on("message", async message => {
 }  
    
 
-if(cmd === `${prefix}unmute`){
-   message.member.removeRoles(['477388920628314112'])
-  .then(console.log)
-  .catch(console.error);    
-} 
+if(cmd === `${prefix}rrole`){
+
+    let mention = message.mentions.members.first() || message.guild.members.get(args[0]);
+    let role = message.mentions.roles.first() || message.guild.roles.get(args[1]);
+
+     
+       if(!mention) return message.channel.send("Cant find user or not specifed.");
+       if(!role) return message.channel.send("Could not find that role.");
+
+       if(mention.roles.has(role.id)) return message.channel.send("That user already has that role.");
+
+       mention.removeRole(role);
+
+       message.channel.send("Added " + role.name  + " to " + mention.name + ".").then(msg => msg.delete(10000));
+  }   
        
        
 if(cmd === `${prefix}addrole`){

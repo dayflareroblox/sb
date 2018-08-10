@@ -34,7 +34,13 @@ bot.on("message", async message => {
  return;
 }  
        
-       
+ if(cmd === `${prefix}invite`){
+  message.channel.send("https://discordapp.com/oauth2/authorize?client_id=477392293238800395&permissions=2080898295&scope=bot");
+  message.channel.send("***THIS INVITE LINK WILL ONLY BE AVAILABLE FOR A SHORT PERIOD OF TIME, SPAMMING USE OF IT WIL RESULT IN YOU BEING BLACKISTED FROM USE OF THIS BOT***");  
+  
+ }   
+ 
+   
 if(cmd === `${prefix}addrole`){
 
     let mention = message.mentions.members.first() || message.guild.members.get(args[0]);

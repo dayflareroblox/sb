@@ -58,19 +58,6 @@ if(cmd === `${prefix}addrole`){
   }
    
    
-if(cmd === `${prefix}info1`){
- let aembed = new Discord.RichEmbed()
-  .setDescription("Hello, I saw your asking for info on me, well I am a moderation/utility bot that is designed to aid you in your servers, we dont need them fun commands that others have iits pure moderation. C:");
-   message.channel.send(aembed)
-   message.delete();
-}
-     
-   
-     if(cmd === `${prefix}getnsfw`){
-
-     message.member.addRole(message.guild.roles.find("name", "nsfw granted"));
-     message.channel.send("You have been granted NSFW access to. :angry:");
-  }
    
   if(cmd === `${prefix}verify`){
 
@@ -81,20 +68,16 @@ if(cmd === `${prefix}info1`){
   }
   
  if(cmd === `${prefix}information`){
-    if(!message.member.hasPermission("ADMINISTRATOR")) return;
-    message.channel.send("Hello, if you want information on me to continue then say !info1");
-  return;
+    let aembed = new Discord.RichEmbed()
+    .setTitle("Information About SM.")
+    .setDescription("Smart Moderation was made by Scripted, It should allways be used securely in a verified server, this bot will automatically warn users for there corruptive behaviour if it senses it, This bot will also moderate your server and keep it calm without troller's.")
+    .addField("Credits:", "ScriptedBuilderz, Pliexe, Ragerous.")
+    .addField("Version:", "V.1.0.0")
+    .addField("Origin:", "United Kingdon")
+    .setColor("#bcfbf2");          
 }
 
-   
-  if(cmd === `${prefix}botinfo`){
 
-    let botembed = new Discord.RichEmbed()
-    .setDescription("Skybot was made by SkyMaker, skybot is a automated moderation bot that helps you in all of your servers, SkyMaker scripted it with JS.")
-    .setTitle("SkyBot Information")
-    .setColor("#62a4f5")
-    return message.channel.send(botembed);
-  }
 
   if(cmd === `${prefix}announce`){
 

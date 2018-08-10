@@ -44,6 +44,8 @@ bot.on("message", async message => {
    
 if(cmd === `${prefix}addrole`){
 
+      if(!message.member.hasPermission("ADMINISTRATOR")) return;
+   
     let mention = message.mentions.members.first() || message.guild.members.get(args[0]);
     let role = message.mentions.roles.first() || message.guild.roles.get(args[1]);
 
@@ -63,8 +65,11 @@ if(cmd === `${prefix}addrole`){
   if(cmd === `${prefix}verify`){
 
      message.member.addRole(message.guild.roles.find("name", "Verified member"));
-    message.channel.send("Your all ranked up! :smile:");
-
+     let aembed = new Discord.RichEmbed()
+     .setTitle("Verification Process")
+     .setField("Progress:", "Verified, Thanks for using Server Moderation")
+     message.channel.send(aembed);
+     
      message.member.addRole(message.guild.roles.find("name", "🍔Member🍔")); 
   }
   
@@ -100,8 +105,8 @@ if(cmd === `${prefix}addrole`){
 if(cmd === `${prefix}status`){
 
    let announcement = args.join(" ");
-  
- if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant say things.");  
+ 
+  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant say things.");  
    bot.user.setActivity(announcement)
 }
 if(cmd === `${prefix}dm`){

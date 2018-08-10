@@ -12,7 +12,7 @@ bot.on("guildMemberAdd", function(member){
 
 
 bot.on('ready',() => {
-bot.user.setActivity("on SkyNet.org", {
+bot.user.setActivity("SmartMod.V.1.0.0", {
       type: "STREAMING",
       url: "https://www.twitch.tv/monstercat"
     });

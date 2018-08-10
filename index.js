@@ -54,12 +54,14 @@ bot.on("message", async message => {
    
 if(cmd === `${prefix}addrole`){
 
-      if(!message.member.hasPermission("ADMINISTRATOR")) return;
+      let modRole = message.guild.roles.find("name", "💕Moderator💕");
+      if(message.member.roles.has(modRole.id)) {
+      
+      
    
     let mention = message.mentions.members.first() || message.guild.members.get(args[0]);
     let role = message.mentions.roles.first() || message.guild.roles.get(args[1]);
-
-     
+      
        if(!mention) return message.channel.send("Cant find user or not specifed.");
        if(!role) return message.channel.send("Could not find that role.");
 
@@ -69,6 +71,12 @@ if(cmd === `${prefix}addrole`){
 
        message.channel.send("Added " + role.name  + " to " + mention.name + ".").then(msg => msg.delete(10000));
   }
+   else {
+      message.reply("Incorrect permissions.");
+   }
+}
+      
+      
    
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\  
    

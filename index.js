@@ -20,6 +20,7 @@ bot.user.setActivity("SmartMod.V.1.0.0", {
 
 
 bot.on("message", async message => {
+
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
 
@@ -68,6 +69,8 @@ if(cmd === `${prefix}addrole`){
      let aembed = new Discord.RichEmbed()
      .setTitle("Verification Process")
      .addField("Progress:", "Verified, Thanks for using Server Moderation")
+     .setColor("#bcfbf2")
+     .setDescription("Your currently being Verified.")
      message.channel.send(aembed);
      
      message.member.addRole(message.guild.roles.find("name", "🍔Member🍔")); 
@@ -92,11 +95,11 @@ if(cmd === `${prefix}addrole`){
      let announcement = args.join(" ");
      let aembed = new Discord.RichEmbed()
      
-       .setDescription(announcement)
+      .setDescription(announcement)
      .setTitle(message.author.username)
-     .setFooter("This bot was made by ScriptedBuilderz.")
+     .setFooter("**Server Moderation Copyright**")
      .setColor("#62a4f5")
-     .setThumbnail("https://cdn.discordapp.com/attachments/471654505830940672/471654608511434752/skylounge.png")
+     .addField("This announcement doesnt effect the will of the bot, but who is calling the command! :warning:")
      message.channel.send(aembed);
      message.channel.send("<@&477180353786937355>")
      message.delete();
@@ -107,7 +110,12 @@ if(cmd === `${prefix}status`){
    let announcement = args.join(" ");
  
   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant say things.");  
-   bot.user.setActivity(announcement)
+  bot.user.setActivity(announcement)
+   
+  let aembed = new Discord.RichEmbed()
+  .setTitle("Bot Status")
+  .setDescription("The Bot status has been changed, bear in mind this command effects ``EVERY`` Server the bot is in.")
+  message.channel.send(aembed);
 }
 if(cmd === `${prefix}dm`){
 

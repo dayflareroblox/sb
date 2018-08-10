@@ -112,7 +112,7 @@ if(cmd === `${prefix}addrole`){
      .setColor("#62a4f5")
      .addField("Warning:", "This announcement doesnt effect the will of the bot, but who is calling the command!")
      message.channel.send(aembed);
-     message.channel.send("<@&477434574666858496>")
+     message.channel.send("<@&477435472050913290>")
      message.delete();
   }
 
@@ -128,7 +128,7 @@ if(cmd ===  `${prefix}botupdt`){
    .addField("Update:", updt)
    .setColor("#62a4f5")
    
-   message.channel.send("<@&477434574666858496>");
+   message.channel.send("<@&477435472050913290>");
    message.channel.send(aembed);            
 }   
    

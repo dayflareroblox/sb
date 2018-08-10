@@ -120,7 +120,6 @@ if(cmd === `${prefix}addrole`){
      .setColor("#62a4f5")
      .addField("Warning:", "This announcement doesnt effect the will of the bot, but who is calling the command!")
      message.channel.send(aembed);
-     message.channel.send("<@&477435472050913290>")
      message.delete();
   }
 
@@ -140,7 +139,6 @@ if(cmd ===  `${prefix}botupdt`){
    .addField("Update:", updt)
    .setColor("#62a4f5")
    
-   message.channel.send("<@&477435472050913290>");
    message.channel.send(aembed);            
 }   
    else {
@@ -221,9 +219,11 @@ if (cmd === `${prefix}report`){
   let kUser = message.guild.member(message.mentions.users.first() || message.guilds.members.get(args[0]));
   if(!kUser) return message.channel.send("User not found. :unamused:");
   let kReason = args.join(" ").slice(22);
-  if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("Sorry you cant kick people.");
-  if(kUser.hasPermission("KICK_MEMBERS")) return message.channel.send("Sorry that user cannot be kicked.");
+  if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply("Sorry you cant kick people.");
+  if(kUser.hasPermission("KICK_MEMBERS")) return message.reply("Sorry that user cannot be kicked.");
 
+      let modRole = message.guild.roles.find("name", "💕Moderator💕");
+      if(message.member.roles.has(modRole.id)) {
 
   let kEmbed = new Discord.RichEmbed()
   .setDescription("/KICK/")
@@ -244,6 +244,7 @@ if (cmd === `${prefix}report`){
   return;
 }
 
+
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\  
   
    if(cmd === `${prefix}ban`){
@@ -251,8 +252,8 @@ if (cmd === `${prefix}report`){
     let bUser = message.guild.member(message.mentions.users.first() || message.guilds.members.get(args[0]));
     if(!bUser) return message.channel.send("User not found. :unamused:");
     let bReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("Sorry you cant ban people.");
-    if(bUser.hasPermission("BAN_MEMBERS")) return message.channel.send("Sorry that user cannot be banned.");
+    if(!message.member.hasPermission("BAN_MEMBERS")) return message.reply("Sorry you cant ban people.");
+    if(bUser.hasPermission("BAN_MEMBERS")) return message.reply("Sorry that user cannot be banned.");
   
   
     let bEmbed = new Discord.RichEmbed()

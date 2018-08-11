@@ -74,7 +74,7 @@ bot.on("message", async message => {
    
 if(cmd === `${prefix}addrole`){
 
-      let modRole = message.guild.roles.find("name", "💕Moderator💕");
+      let modRole = message.guild.roles.find("name", "Mods");
       if(message.member.roles.has(modRole.id)) {
       
       

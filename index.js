@@ -52,6 +52,16 @@ bot.on("message", async message => {
  
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\
    
+ if(cmd === `${prefix}unmute`){
+     let mention = message.mentions.members.first() || message.guild.members.get(args[0]);
+     if(!mention) return message.channel.send("Cant find user or not specifed.");
+    
+    mention.removeRole(message.guild.roles.find("name", "Muted"));
+    
+ }    
+   
+ //---------------------------------------------------------------\\//---------------------------------------------------------------\\     
+   
  if(cmd === `${prefix}mute`){
      let mention = message.mentions.members.first() || message.guild.members.get(args[0]);
      if(!mention) return message.channel.send("Cant find user or not specifed.");

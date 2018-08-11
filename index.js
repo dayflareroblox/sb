@@ -116,7 +116,7 @@ if(cmd === `${prefix}addrole`){
      
       .setDescription(announcement)
      .setTitle(message.author.username)
-     .setFooter("**Server Moderation Copyright**")
+     .setFooter("Copyright.")
      .setColor("#62a4f5")
      .addField("Warning:", "This announcement doesnt effect the will of the bot, but who is calling the command!")
      message.channel.send(aembed);

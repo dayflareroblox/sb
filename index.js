@@ -93,7 +93,7 @@ if(cmd === `${prefix}addrole`){
      .setColor("#62a4f5")
      message.channel.send(aembed);
      message.delete();
-     message.channel.send("<@484445778887180298>");
+     message.channel.send("<@Verified>");
   }
 
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\

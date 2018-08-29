@@ -83,7 +83,7 @@ if(cmd === `${prefix}addrole`){
 
   if(cmd === `${prefix}announce`){
 
-   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant say things.");   
+   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant announce things.");   
      let announcement = args.join(" ");
      let aembed = new Discord.RichEmbed()     
      
@@ -91,9 +91,9 @@ if(cmd === `${prefix}addrole`){
      .setTitle(message.author.username)
      .setFooter("Copyright.")
      .setColor("#62a4f5")
-     .addField("Warning:", "This Command is called by a specific user not the bot")
      message.channel.send(aembed);
      message.delete();
+     message.channel.send("<@484445778887180298>");
   }
 
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\
@@ -102,7 +102,7 @@ if(cmd === `${prefix}status`){
 
    let announcement = args.join(" ");
  
-  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant say things.");  
+  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant set status.");  
   bot.user.setActivity(announcement)
    
   let aembed = new Discord.RichEmbed()

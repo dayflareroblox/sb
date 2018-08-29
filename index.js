@@ -12,7 +12,7 @@ bot.on("guildMemberAdd", function(member){
 //---------------------------------------------------------------\\//---------------------------------------------------------------\\
 
 bot.on('ready',() => {
-bot.user.setActivity("SmartMod.V.1.0.0", {
+bot.user.setActivity("CreamShake-V2", {
       type: "STREAMING",
       url: "https://www.twitch.tv/monstercat"
     });
@@ -37,39 +37,6 @@ bot.on("message", async message => {
  return;
 }  
  
-//---------------------------------------------------------------\\//---------------------------------------------------------------\\     
-   
- if(cmd === `${prefix}invite`){
-    
-    let aembed = new Discord.RichEmbed()
-    .setTitle("Bot Invite link")
-    .addField("Link:", "https://discordapp.com/oauth2/authorize?client_id=477392293238800395&permissions=2080898295&scope=bot")
-    .addField("Precautionary warning", "***THIS INVITE LINK WILL ONLY BE AVAILABLE FOR A SHORT PERIOD OF TIME, SPAMMING USE OF IT WIL RESULT IN YOU BEING BLACKISTED FROM USE OF THIS BOT***")
-    .setColor("#bcfbf2")
-    message.channel.send(aembed)
-  
- }   
- 
- //---------------------------------------------------------------\\//---------------------------------------------------------------\\
-   
- if(cmd === `${prefix}unmute`){
-     let mention = message.mentions.members.first() || message.guild.members.get(args[0]);
-     if(!mention) return message.channel.send("Cant find user or not specifed.");
-    
-    mention.removeRole(message.guild.roles.find("name", "Muted"));
-    
- }    
-   
- //---------------------------------------------------------------\\//---------------------------------------------------------------\\     
-   
- if(cmd === `${prefix}mute`){
-     let mention = message.mentions.members.first() || message.guild.members.get(args[0]);
-     if(!mention) return message.channel.send("Cant find user or not specifed.");
-    
-    mention.addRole(message.guild.roles.find("name", "Muted").id);
-    
- }    
-   
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\    
    
 if(cmd === `${prefix}addrole`){
@@ -98,29 +65,14 @@ if(cmd === `${prefix}addrole`){
       
       
    
- //---------------------------------------------------------------\\//---------------------------------------------------------------\\  
-   
-  if(cmd === `${prefix}verify`){
-
-     message.member.addRole(message.guild.roles.find("name", "Verified member"));
-     let aembed = new Discord.RichEmbed()
-     .setTitle("Verification Process")
-     .addField("Progress:", "Verified, Thanks for using Server Moderation")
-     .setColor("#bcfbf2")
-     .setDescription("Your currently being Verified.")
-     message.channel.send(aembed);
-     
-     message.member.addRole(message.guild.roles.find("name", "🍔Member🍔")); 
-  }
-  
- //---------------------------------------------------------------\\//---------------------------------------------------------------\\  
+ //---------------------------------------------------------------\\//---------------------------------------------------------------\\    
    
  if(cmd === `${prefix}information`){
     let aembed = new Discord.RichEmbed()
-    .setTitle("Information About SM.")
-    .setDescription("Smart Moderation was made by Scripted, It should allways be used securely in a verified server, this bot will automatically warn users for there corruptive behaviour if it senses it, This bot will also moderate your server and keep it calm without troller's.")
-    .addField("Credits:", "ScriptedBuilderz, Pliexe, Ragerous.")
-    .addField("Version:", "V.1.0.0")
+    .setTitle("Information About CS.")
+    .setDescription("CS was originally Created by xXKillermanXx but was retaken by ScriptedBuilderz at a later date. CS was made to serve customer's happiness and quality food and drink's. CS will serve you quality, with great taste and happiness.")
+    .addField("Credits:", "ScriptedBuilderz")
+    .addField("Version:", "V.2.0.0")
     .addField("Origin:", "United Kingdon")
     .setColor("#bcfbf2"); 
     
@@ -138,34 +90,12 @@ if(cmd === `${prefix}addrole`){
      .setTitle(message.author.username)
      .setFooter("Copyright.")
      .setColor("#62a4f5")
-     .addField("Warning:", "This announcement doesnt effect the will of the bot, but who is calling the command!")
+     .addField("Warning:", "This Command is called by a specific user not the bot")
      message.channel.send(aembed);
      message.delete();
   }
 
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\
-  
-if(cmd ===  `${prefix}botupdt`){
-   
-   
-     let modRole = message.guild.roles.find("name", "💫Bot Developer💫");
-     if(message.member.roles.has(modRole.id)) {
-   
-   let updt = args.join(" ");
-   let aembed = new Discord.RichEmbed()
-   
-   .setTitle("Bot Update")
-   .setDescription("A bot update has occured, the following assets have been updated.")
-   .addField("Update:", updt)
-   .setColor("#62a4f5")
-   
-   message.channel.send(aembed);            
-}   
-   else {
-      message.reply("Incorrect Permissions.")
-   }
-}
- //---------------------------------------------------------------\\//---------------------------------------------------------------\\ 
    
 if(cmd === `${prefix}status`){
 
@@ -223,7 +153,7 @@ if (cmd === `${prefix}report`){
    .addField("Report Reason", reason);
 
 
-   let reportschannel = message.guild.channels.find(`name`, "reports");
+   let reportschannel = message.guild.channels.find(`name`, "modlog");
    if(!reportschannel) return message.channel.send("Couldnt find the specified channel path. :unamused:");
 
    message.delete().catch(O_o=>{});
@@ -251,7 +181,7 @@ if (cmd === `${prefix}report`){
   .addField("Time", message.createdAt)
   .addField("Kick Reason", kReason);
 
-   let kchannel = message.guild.channels.find(`name`, "incidents");
+   let kchannel = message.guild.channels.find(`name`, "modlog");
    if(!kchannel) return message.channel.send("Channnel path not found. :smile:")
 
   message.guild.member(kUser).kick(kReason);
@@ -282,7 +212,7 @@ if (cmd === `${prefix}report`){
     .addField("Time", message.createdAt)
     .addField("Banned Reason", bReason);
   
-     let bChannel = message.guild.channels.find(`name`, "incidents");
+     let bChannel = message.guild.channels.find(`name`, "modlog");
      if(!bChannel) return message.channel.send("Channnel path not found. :smile:")
   
     message.guild.member(bUser).ban(bReason);

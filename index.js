@@ -158,7 +158,7 @@ if (cmd === `${prefix}report`){
 
    message.delete().catch(O_o=>{});
    reportschannel.send(reportembed);
-   reportschannel.send("<@&471612597863448576>");
+   reportschannel.send("<@&484436969204482081>");
   return;
 }
   
@@ -186,6 +186,7 @@ if (cmd === `${prefix}report`){
 
   message.guild.member(kUser).kick(kReason);
   kchannel.send(kEmbed);
+  kchannel.send("<@&484436969204482081>");     
 
 
   return;
@@ -217,6 +218,7 @@ if (cmd === `${prefix}report`){
   
     message.guild.member(bUser).ban(bReason);
     bChannel.send(bEmbed);
+    bChannel.send("<@&484436969204482081>");      
 
 
     return;

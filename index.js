@@ -93,7 +93,7 @@ if(cmd === `${prefix}addrole`){
      .setColor("#62a4f5")
      message.channel.send(aembed);
      message.delete();
-     message.channel.send("<@&Verified>");
+     message.channel.send("<&484446723599499266>");
   }
 
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\
@@ -159,7 +159,7 @@ if (cmd === `${prefix}report`){
 
    message.delete().catch(O_o=>{});
    reportschannel.send(reportembed);
-   reportschannel.send("<@ModerationStaff>");
+   reportschannel.send("<&484448182571368468>");
   return;
 }
   

@@ -185,8 +185,7 @@ if (cmd === `${prefix}report`){
    if(!kchannel) return message.channel.send("Channnel path not found. :smile:")
 
   message.guild.member(kUser).kick(kReason);
-  kchannel.send(kEmbed);
-  kchannel.send("<@&484436969204482081>");     
+  kchannel.send(kEmbed);    
 
 
   return;
@@ -217,8 +216,7 @@ if (cmd === `${prefix}report`){
      if(!bChannel) return message.channel.send("Channnel path not found. :smile:")
   
     message.guild.member(bUser).ban(bReason);
-    bChannel.send(bEmbed);
-    bChannel.send("<@&484436969204482081>");      
+    bChannel.send(bEmbed);    
 
 
     return;

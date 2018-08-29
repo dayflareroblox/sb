@@ -83,10 +83,11 @@ if(cmd === `${prefix}addrole`){
 
   if(cmd === `${prefix}announce`){
 
+   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant say things.");   
      let announcement = args.join(" ");
-     let aembed = new Discord.RichEmbed()
+     let aembed = new Discord.RichEmbed()     
      
-      .setDescription(announcement)
+     .setDescription(announcement)
      .setTitle(message.author.username)
      .setFooter("Copyright.")
      .setColor("#62a4f5")
@@ -158,7 +159,7 @@ if (cmd === `${prefix}report`){
 
    message.delete().catch(O_o=>{});
    reportschannel.send(reportembed);
-   reportschannel.send("<@&484436969204482081>");
+   reportschannel.send("<@484436969204482081>");
   return;
 }
   

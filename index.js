@@ -37,43 +37,22 @@ bot.on("message", async message => {
  return;
 }  
  
- //---------------------------------------------------------------\\//---------------------------------------------------------------\\    
-   
-if(cmd === `${prefix}addrole`){
-
-      let modRole = message.guild.roles.find("name", "ModerationStaff");
-      if(message.member.roles.has(modRole.id)) {
-      
-      
-   
-    let mention = message.mentions.members.first() || message.guild.members.get(args[0]);
-    let role = message.mentions.roles.first() || message.guild.roles.get(args[1]);
-      
-       if(!mention) return message.channel.send("Cant find user or not specifed.");
-       if(!role) return message.channel.send("Could not find that role.");
-
-       if(mention.roles.has(role.id)) return message.channel.send("That user already has that role.");
-
-       mention.addRole(role);
-
-       message.channel.send("Added " + role.name  + " to " + mention.name + ".").then(msg => msg.delete(10000));
-  }
-   else {
-      message.reply("Incorrect permissions.");
-   }
-}
-      
-      
-   
- //---------------------------------------------------------------\\//---------------------------------------------------------------\\    
+ //---------------------------------------------------------------\\//---------------------------------------------------------------\\        
    
  if(cmd === `${prefix}information`){
     let aembed = new Discord.RichEmbed()
     .setTitle("Information About CS.")
-    .setDescription("CS was originally Created by xXKillermanXx but was retaken by ScriptedBuilderz at a later date. CS was made to serve customer's happiness and quality food and drink's. CS will serve you quality, with great taste and happiness.")
-    .addField("Credits:", "ScriptedBuilderz")
+    .addField("Cafe Builder:", "ScriptedBuilderz")
+    .addField("Cafe Scripter:", "ScriptedBuilderz")
+    .addField("Cafe Donator's:", "Nil")
+    .addField("Cafe Supporter's:", "MinelsMore, BanSeek")
+    .addField("First Alliance:", "Baked")
     .addField("Version:", "V.2.0.0")
     .addField("Origin:", "United Kingdon")
+    .addField("Owned by:", "ScriptedBuilderz")
+    .addField("Motto:", "Serving happiness one customer at a time.")
+    .addField("Cafe Recruitment Head", "Nil")
+    .setDescription("This cafe was made to serve everyone joy and happiness")
     .setColor("#bcfbf2"); 
     
     message.channel.send(aembed);
@@ -89,7 +68,6 @@ if(cmd === `${prefix}addrole`){
      
      .setDescription(announcement)
      .setTitle(message.author.username)
-     .setFooter("Copyright.")
      .setColor("#62a4f5")
      message.channel.send(aembed);
      message.delete();
@@ -107,7 +85,7 @@ if(cmd === `${prefix}status`){
    
   let aembed = new Discord.RichEmbed()
   .setTitle("Bot Status")
-  .setDescription("The Bot status has been changed, bear in mind this command effects ``EVERY`` Server the bot is in.")
+  .setDescription("The bot status has been changed, please dont abuse this feature.")
   message.channel.send(aembed);
 }
    
@@ -121,7 +99,7 @@ if(cmd === `${prefix}dm`){
    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant DM people.");
      if(message.mentions.users.first()) return message.mentions.users.first().send(msg);
       message.channel.send("User has been DM'ed! Thanks.");
-   message.delete();
+      message.delete().catch(O_o=>{});
     
   }
 
@@ -133,7 +111,7 @@ if(cmd === `${prefix}dm`){
       const sayMessage = args.join(" ");
       message.delete().catch();
       message.channel.send(sayMessage);
-      message.delete();
+      message.delete().catch(O_o=>{});
 }
   
 //---------------------------------------------------------------\\//---------------------------------------------------------------\\  

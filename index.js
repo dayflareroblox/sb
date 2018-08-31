@@ -66,10 +66,10 @@ if(cmd === `${prefix}shout`){
      let announcement = args.join(" ");
      let embed = new Discord.RichEmbed()
      .setDescription(announcement)
-     .setTitle(message.author)
+     .setTitle(message.author.name)
      .setThumbnail("https://cdn.discordapp.com/attachments/480751126539403264/485070325617524756/Cream_Shake.png")
      .setColor("#62a4f5")
-      message.delete().catch(O_o=>{}); 
+      message.delete();
      message.channel.send(embed)
 
 }   

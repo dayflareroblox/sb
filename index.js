@@ -64,8 +64,7 @@ bot.on("message", async message => {
 
    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant announce things.");   
      let announcement = args.join(" ");
-     let aembed = new Discord.RichEmbed()     
-     
+     let aembed = new Discord.RichEmbed()    
      .setDescription(announcement)
      .setTitle(message.author.username)
      .setColor("#62a4f5")

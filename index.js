@@ -75,8 +75,20 @@ bot.on("message", async message => {
   }
 
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\
-   
-if(cmd === `${prefix}status`){
+   if(cmd === `${prefix}cmds`){
+     let aembed = new Discord.RichEmbed()
+     
+     .setTitle("Bot Commands")
+     .setDescription("If any of these commands error please contact the bot owner on discord. 𝓢𝓬𝓻𝓲𝓹𝓽𝓮𝓭𝓑𝓾𝓲𝓵𝓭𝓮𝓻𝔃#2391")
+     .addField("Moderation", "Kick, Ban, Report")
+     .addField("Fun", "Status, DM, Announce, Information, say")
+     .setFooter("More commands will be added soon")
+     
+     message.channel.send(aembed);
+   }      
+ //---------------------------------------------------------------\\//---------------------------------------------------------------\\   
+
+ if(cmd === `${prefix}status`){
 
    let announcement = args.join(" ");
  

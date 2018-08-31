@@ -60,18 +60,19 @@ bot.on("message", async message => {
 
 //---------------------------------------------------------------\\//---------------------------------------------------------------\\
 
-  if(cmd === `${prefix}announce`){
-
-   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant announce things.");   
+if(cmd === `${prefix}shout`){
+   
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant announce things.");   
      let announcement = args.join(" ");
-     let aembed = new Discord.RichEmbed()    
+     let embed = new Discord.RichEmbed()
      .setDescription(announcement)
-     .setTitle(message.author.username)
+     .setTitle(message.author)
+     .setThumbnail("https://cdn.discordapp.com/attachments/480751126539403264/485070325617524756/Cream_Shake.png")
      .setColor("#62a4f5")
-     message.channel.send(aembed);
-     message.delete();
-     message.channel.send("<@&480750327352786944>");
-  }
+      message.delete().catch(O_o=>{}); 
+     message.channel.send(embed)
+
+}   
 
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\
    if(cmd === `${prefix}cmds`){

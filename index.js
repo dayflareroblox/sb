@@ -133,7 +133,7 @@ if (cmd === `${prefix}report`){
    .addField("Report Reason", reason);
 
 
-   let reportschannel = message.guild.channels.find(`name`, "modlog");
+   let reportschannel = message.guild.channels.find(`name`, "modlogs");
    if(!reportschannel) return message.channel.send("Couldnt find the specified channel path. :unamused:");
     if(message.mentions.users.first()) return message.mentions.users.first().send(reportembed);   
 
@@ -161,7 +161,7 @@ if (cmd === `${prefix}report`){
   .addField("Time", message.createdAt)
   .addField("Kick Reason", kReason);
 
-   let kchannel = message.guild.channels.find(`name`, "modlog");
+   let kchannel = message.guild.channels.find(`name`, "modlogs");
    if(!kchannel) return message.channel.send("Channnel path not found. :smile:")
 
   message.guild.member(kUser).kick(kReason);
@@ -193,7 +193,7 @@ if (cmd === `${prefix}report`){
     .addField("Time", message.createdAt)
     .addField("Banned Reason", bReason);
   
-     let bChannel = message.guild.channels.find(`name`, "modlog");
+     let bChannel = message.guild.channels.find(`name`, "modlogs");
      if(!bChannel) return message.channel.send("Channnel path not found. :smile:")
   
     message.guild.member(bUser).ban(bReason);

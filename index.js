@@ -41,7 +41,6 @@ bot.on("message", async message => {
 
 if(cmd === `${prefix}shout`){
    
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant announce things.");   
      let announcement = args.join(" ");
      let embed = new Discord.RichEmbed()
      .setDescription(announcement)

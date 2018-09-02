@@ -12,7 +12,7 @@ bot.on("guildMemberAdd", function(member){
 //---------------------------------------------------------------\\//---------------------------------------------------------------\\
 
 bot.on('ready',() => {
-bot.user.setActivity("CreamShake-V2", {
+bot.user.setActivity("Nonsense Diamond", {
       type: "STREAMING",
       url: "https://www.twitch.tv/monstercat"
     });

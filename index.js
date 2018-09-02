@@ -125,7 +125,7 @@ if (cmd === `${prefix}report`){
 
    let reportembed = new Discord.RichEmbed()
    .setDescription("Reports")
-   .setColor("##c700ff")
+   .setColor("#c700ff")
    .addField("Reported User", `${rUser} with ID: ${rUser.id}`)
    .addField("Reported by", `${message.author} with ID: ${message.author.id}`)
    .addField("Channel", message.channel)
@@ -139,6 +139,7 @@ if (cmd === `${prefix}report`){
 
    message.delete().catch(O_o=>{});
    reportschannel.send(reportembed);
+      message.reply("User had been reported, if you are fake reporting you will be blacklisted from this server immidiatley.")
      if(message.mentions.users.first()) return message.mentions.users.first().send(reportembed);     
   return;
 }

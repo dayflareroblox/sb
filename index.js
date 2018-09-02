@@ -35,7 +35,8 @@ bot.on("message", async message => {
 }  
  
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\ 
- if(cmd === `${prefix}yt`){
+ 
+   if(cmd === `${prefix}yt`){
      let ytembed = new Discord.RichEmbed()
      
      .setDescription("Remember to subscribe and smash that bell!")
@@ -45,7 +46,19 @@ bot.on("message", async message => {
      .setFooter("Official property of Nonsense Diamond.")
      
      message.reply(ytembed);
- }       
+ }   
+      
+ //---------------------------------------------------------------\\//---------------------------------------------------------------\\
+  if(cmd === `${prefix}officialexploit`){
+        let embed = new Discord.RichEmbed()
+        
+        .setDescription("https://nonsensediamond.website/ND/")
+        .setColor("#c700ff")
+        .setFooter("Copyrighted by Nonsense Diamond")
+        .addField("Maker:", "<@482231087528148992>")
+  
+        reply.message(embed);      
+  }        
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\      
 
 if(cmd === `${prefix}shout`){

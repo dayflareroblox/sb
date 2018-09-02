@@ -9,7 +9,7 @@ const bot = new Discord.Client({disableEveryone: true});
 //---------------------------------------------------------------\\//---------------------------------------------------------------\\
 
 bot.on('ready',() => {
-bot.user.setActivity("Pizza Hut™", {
+bot.user.setActivity("live porn", {
       type: "STREAMING",
       url: "https://www.twitch.tv/monstercat"
     });

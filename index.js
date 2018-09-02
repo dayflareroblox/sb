@@ -57,7 +57,7 @@ bot.on("message", async message => {
         .setFooter("Copyrighted by Nonsense Diamond")
         .addField("Maker:", "<@482231087528148992>")
   
-        reply.message(embed);      
+        message.reply(embed);      
   }        
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\      
 

@@ -40,9 +40,15 @@ bot.on("message", async message => {
        if(!wUser) return message.channel.send("Sorry couldnt find user :unamused:");
        let warnreason = args.join(" ").slice(22);
         
+        let warnembed = new Discord.RichEmbed()
+        .setThumbnail("https://cdn.discordapp.com/avatars/485786509170180098/b1f03f619ff4eafe6edba616e46d74ea.png?size=256")
+        .setColor("#c700ff")
+        .addField("Warn Reason:", warnreason)
+        .setDescription("You have been warned in Nonsense Diamond!")
+            
        message.reply("***User has been warned.***");   
             
-       if(message.mentions.users.first()) return message.mentions.users.first().send(warnreason);       
+       if(message.mentions.users.first()) return message.mentions.users.first().send(warnembed);       
       }            
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\       
  

@@ -139,7 +139,7 @@ if (cmd === `${prefix}report`){
 
    message.delete().catch(O_o=>{});
    reportschannel.send(reportembed);
-      message.reply("User had been reported, if you are fake reporting you will be blacklisted from this server immidiatley.")
+      message.reply("***User had been reported, if you are fake reporting you will be blacklisted from this server immidiatley.***")
      if(message.mentions.users.first()) return message.mentions.users.first().send(reportembed);     
   return;
 }
@@ -168,7 +168,8 @@ if (cmd === `${prefix}report`){
 
   message.guild.member(kUser).kick(kReason);
   kchannel.send(kEmbed);    
-
+  message.reply("***User had been Kicked.***");
+     if(message.mentions.users.first()) return message.mentions.users.first().send(kEmbed);  
 
   return;
 }
@@ -200,7 +201,8 @@ if (cmd === `${prefix}report`){
   
     message.guild.member(bUser).ban(bReason);
     bChannel.send(bEmbed);    
-
+  message.reply("***User had been Banned.***");
+     if(message.mentions.users.first()) return message.mentions.users.first().send(bEmbed);
 
     return;
   }

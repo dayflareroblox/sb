@@ -43,7 +43,7 @@ if(cmd === `${prefix}shout`){
      .setDescription(announcement)
      .setTitle("Diamond Announcement")
      .setThumbnail("https://cdn.discordapp.com/avatars/485786509170180098/b1f03f619ff4eafe6edba616e46d74ea.png?size=256")
-     .setColor("#62a4f5")
+     .setColor("#c700ff")
       message.delete();
      message.channel.send(embed)
 
@@ -60,6 +60,7 @@ if(cmd === `${prefix}shout`){
    
   let aembed = new Discord.RichEmbed()
   .setTitle("Bot Status")
+  .setColor("#c700ff")
   .setDescription("The bot status has been changed, please dont abuse this feature.")
   message.channel.send(aembed);
 }
@@ -99,7 +100,7 @@ if (cmd === `${prefix}report`){
 
    let reportembed = new Discord.RichEmbed()
    .setDescription("Reports")
-   .setColor("#62a4f5")
+   .setColor("##c700ff")
    .addField("Reported User", `${rUser} with ID: ${rUser.id}`)
    .addField("Reported by", `${message.author} with ID: ${message.author.id}`)
    .addField("Channel", message.channel)

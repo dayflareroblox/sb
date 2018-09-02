@@ -38,27 +38,6 @@ bot.on("message", async message => {
 }  
  
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\        
-   
- if(cmd === `${prefix}information`){
-    let aembed = new Discord.RichEmbed()
-    .setTitle("Information About CS.")
-    .addField("Cafe Builder:", "ScriptedBuilderz")
-    .addField("Cafe Scripter:", "ScriptedBuilderz")
-    .addField("Cafe Donator's:", "Nil")
-    .addField("Cafe Supporter's:", "MinelsMore, BanSeek")
-    .addField("First Alliance:", "Baked")
-    .addField("Version:", "V.2.0.0")
-    .addField("Origin:", "United Kingdon")
-    .addField("Owned by:", "ScriptedBuilderz")
-    .addField("Motto:", "Serving happiness one customer at a time.")
-    .addField("Cafe Recruitment Head", "Nil")
-    .setDescription("This cafe was made to serve everyone joy and happiness")
-    .setColor("#bcfbf2"); 
-    
-    message.channel.send(aembed);
-}
-
-//---------------------------------------------------------------\\//---------------------------------------------------------------\\
 
 if(cmd === `${prefix}shout`){
    
@@ -66,26 +45,14 @@ if(cmd === `${prefix}shout`){
      let announcement = args.join(" ");
      let embed = new Discord.RichEmbed()
      .setDescription(announcement)
-     .setTitle(message.author.name)
-     .setThumbnail("https://cdn.discordapp.com/attachments/480751126539403264/485070325617524756/Cream_Shake.png")
+     .setTitle("Diamond Announcement")
+     .setThumbnail("https://cdn.discordapp.com/avatars/485786509170180098/b1f03f619ff4eafe6edba616e46d74ea.png?size=256")
      .setColor("#62a4f5")
       message.delete();
      message.channel.send(embed)
 
 }   
 
- //---------------------------------------------------------------\\//---------------------------------------------------------------\\
-   if(cmd === `${prefix}cmds`){
-     let aembed = new Discord.RichEmbed()
-     
-     .setTitle("Bot Commands")
-     .setDescription("If any of these commands error please contact the bot owner on discord. 𝓢𝓬𝓻𝓲𝓹𝓽𝓮𝓭𝓑𝓾𝓲𝓵𝓭𝓮𝓻𝔃#2391")
-     .addField("Moderation", "Kick, Ban, Report")
-     .addField("Fun", "Status, DM, Announce, Information, say")
-     .setFooter("More commands will be added soon")
-     
-     message.channel.send(aembed);
-   }      
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\   
 
  if(cmd === `${prefix}status`){
@@ -149,7 +116,6 @@ if (cmd === `${prefix}report`){
 
    message.delete().catch(O_o=>{});
    reportschannel.send(reportembed);
-   reportschannel.send("<@&484436325353652256>");
   return;
 }
   

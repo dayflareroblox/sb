@@ -34,7 +34,19 @@ bot.on("message", async message => {
  return;
 }  
  
- //---------------------------------------------------------------\\//---------------------------------------------------------------\\        
+ //---------------------------------------------------------------\\//---------------------------------------------------------------\\ 
+ if(cmd === `${prefix}yt`){
+     let ytembed = new Discord.RichEmbed()
+     
+     .setDescription("Remember to subscribe and smash that bell!")
+     .setColor("#c700ff")
+     .setThumbnail("https://cdn.discordapp.com/avatars/485786509170180098/b1f03f619ff4eafe6edba616e46d74ea.png?size=256")
+     .setTitle("https://www.youtube.com/channel/UCRvLsJ4SOATDr4Ti3D2_5tw")
+     .setFooter("Official property of Nonsense Diamond.")
+     
+     message.reply(ytembed);
+ }       
+ //---------------------------------------------------------------\\//---------------------------------------------------------------\\      
 
 if(cmd === `${prefix}shout`){
    

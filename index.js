@@ -135,10 +135,11 @@ if (cmd === `${prefix}report`){
 
    let reportschannel = message.guild.channels.find(`name`, "modlogs");
    if(!reportschannel) return message.channel.send("Couldnt find the specified channel path. :unamused:");
-    if(message.mentions.users.first()) return message.mentions.users.first().send(reportembed);   
+   
 
    message.delete().catch(O_o=>{});
    reportschannel.send(reportembed);
+     if(message.mentions.users.first()) return message.mentions.users.first().send(reportembed);     
   return;
 }
   

@@ -124,7 +124,7 @@ if(cmd === `${prefix}dm`){
    
  if(cmd === `${prefix}say`){
 
-      if(!message.member.hasPermission("ADMINISTRATOR")) or message.author.id == "481171799204429834" return;
+      if(!message.member.hasPermission("ADMINISTRATOR")) return;
       const sayMessage = args.join(" ");
       message.delete().catch();
       message.channel.send(sayMessage);

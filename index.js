@@ -43,10 +43,10 @@ bot.on("message", async message => {
        let warnreason = args.join(" ").slice(22);
         
         let warnembed = new Discord.RichEmbed()
-        .setThumbnail("https://cdn.discordapp.com/attachments/485822207306498048/485844218217234468/piz.png")
+        .setThumbnail("https://cdn.discordapp.com/attachments/485820357975080981/485910357785837579/images.jpg")
         .setColor("#c700ff")
         .addField("Warn Reason:", warnreason)
-        .setDescription("You have been warned in Pizza Hut!")
+        .setDescription("You have been warned in ***BigNiggaRebellion***")
             
        message.reply("***User has been warned.***");   
             
@@ -55,28 +55,13 @@ bot.on("message", async message => {
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\       
  
    if(cmd === `${prefix}yt`){
-     let ytembed = new Discord.RichEmbed()
-     
-     .setDescription("Remember to subscribe and smash that bell!")
-     .setColor("#c700ff")
-     .setThumbnail("https://cdn.discordapp.com/avatars/485786509170180098/b1f03f619ff4eafe6edba616e46d74ea.png?size=256")
-     .setTitle("https://www.youtube.com/channel/UCRvLsJ4SOATDr4Ti3D2_5tw")
-     .setFooter("Official property of Nonsense Diamond.")
-     
-     message.reply(ytembed);
+     message.reply("YOU NIGGA STOP WATCHING YOUTUBE, GET YO SWEATY ASS OUT THERE AND REBEL");
  }   
       
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\
   if(cmd === `${prefix}Group`){
-        let embed = new Discord.RichEmbed()
-        
-        .setDescription("https://www.roblox.com/Groups/group.aspx?gid=1077300")
-        .setColor("#c700ff")
-        .setFooter("Copyrighted by Pizza Hut")
-        .addField("Maker:", "<@285897998150402049>")
-  
-        message.reply(embed);      
-  }        
+  message.reply("YO NIGGA, THE NIGGA REBELLION BROKE NIGGA, GET YOU ASS OUT THERE ROBBING THAT DOSH NIGGA $$$$$$$$")
+  }
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\      
 
 if(cmd === `${prefix}shout`){
@@ -84,8 +69,8 @@ if(cmd === `${prefix}shout`){
      let announcement = args.join(" ");
      let embed = new Discord.RichEmbed()
      .setDescription(announcement)
-     .setTitle("Pizza Hut Announcement")
-     .setThumbnail("https://cdn.discordapp.com/attachments/485822207306498048/485844218217234468/piz.png")
+     .setTitle("NIGGA ANNOUNCEMENT")
+     .setThumbnail("https://cdn.discordapp.com/attachments/485820357975080981/485910920728412170/images.jpg")
      .setColor("#c700ff")
       message.delete();
      message.channel.send(embed)
@@ -142,7 +127,7 @@ if (cmd === `${prefix}report`){
    let reason = args.join(" ").slice(22);
 
    let reportembed = new Discord.RichEmbed()
-   .setThumbnail("https://cdn.discordapp.com/attachments/485822207306498048/485844218217234468/piz.png")   
+   .setThumbnail("https://cdn.discordapp.com/attachments/485820357975080981/485910920728412170/images.jpg")   
    .setDescription("Reports")
    .setColor("#c700ff")
    .addField("Reported User", `${rUser} with ID: ${rUser.id}`)
@@ -174,7 +159,7 @@ if (cmd === `${prefix}report`){
   if(kUser.hasPermission("KICK_MEMBERS")) return message.reply("Sorry that user cannot be kicked.");
 
   let kEmbed = new Discord.RichEmbed()
-   .setThumbnail("https://cdn.discordapp.com/attachments/485822207306498048/485844218217234468/piz.png") 
+   .setThumbnail("https://cdn.discordapp.com/attachments/485820357975080981/485910920728412170/images.jpg") 
   .setDescription("/KICK/")
   .setColor("#62a4f5")
   .addField("Kicked User.", `${kUser} with the ID: ${kUser.id}`)
@@ -208,7 +193,7 @@ if (cmd === `${prefix}report`){
   
   
     let bEmbed = new Discord.RichEmbed()
-    .setThumbnail("https://cdn.discordapp.com/attachments/485822207306498048/485844218217234468/piz.png")    
+    .setThumbnail("https://cdn.discordapp.com/attachments/485820357975080981/485910920728412170/images.jpg")    
     .setDescription("/BAN/")
     .setColor("#FF0033")
     .addField("Banned User.", `${bUser} with the ID: ${bUser.id}`)

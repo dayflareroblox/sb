@@ -36,7 +36,9 @@ bot.on("message", async message => {
  
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\
       if(cmd === `${prefix}warn`){
-       let wUser = message.guild.member(message.mentions.users.first() || message.guilds.members.get(args[0]));
+      
+   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("***Sorry you cant warn users.***");    
+     let wUser = message.guild.member(message.mentions.users.first() || message.guilds.members.get(args[0]));
        if(!wUser) return message.channel.send("Sorry couldnt find user :unamused:");
        let warnreason = args.join(" ").slice(22);
         

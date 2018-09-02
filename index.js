@@ -43,10 +43,10 @@ bot.on("message", async message => {
        let warnreason = args.join(" ").slice(22);
         
         let warnembed = new Discord.RichEmbed()
-        .setThumbnail("https://cdn.discordapp.com/avatars/485786509170180098/b1f03f619ff4eafe6edba616e46d74ea.png?size=256")
+        .setThumbnail("https://cdn.discordapp.com/attachments/485822207306498048/485844218217234468/piz.png")
         .setColor("#c700ff")
         .addField("Warn Reason:", warnreason)
-        .setDescription("You have been warned in Nonsense Diamond!")
+        .setDescription("You have been warned in Pizza Hut!")
             
        message.reply("***User has been warned.***");   
             
@@ -67,13 +67,13 @@ bot.on("message", async message => {
  }   
       
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\
-  if(cmd === `${prefix}officialexploit`){
+  if(cmd === `${prefix}Group`){
         let embed = new Discord.RichEmbed()
         
-        .setDescription("https://nonsensediamond.website/ND/")
+        .setDescription("https://www.roblox.com/Groups/group.aspx?gid=1077300")
         .setColor("#c700ff")
-        .setFooter("Copyrighted by Nonsense Diamond")
-        .addField("Maker:", "<@482231087528148992>")
+        .setFooter("Copyrighted by Pizza Hut")
+        .addField("Maker:", "<@285897998150402049>")
   
         message.reply(embed);      
   }        
@@ -84,8 +84,8 @@ if(cmd === `${prefix}shout`){
      let announcement = args.join(" ");
      let embed = new Discord.RichEmbed()
      .setDescription(announcement)
-     .setTitle("Diamond Announcement")
-     .setThumbnail("https://cdn.discordapp.com/avatars/485786509170180098/b1f03f619ff4eafe6edba616e46d74ea.png?size=256")
+     .setTitle("Pizza Hut Announcement")
+     .setThumbnail("https://cdn.discordapp.com/attachments/485822207306498048/485844218217234468/piz.png")
      .setColor("#c700ff")
       message.delete();
      message.channel.send(embed)
@@ -115,11 +115,11 @@ if(cmd === `${prefix}dm`){
      let mention = args[0];
      const msg = args.slice("1").join(" ");
      
-   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant DM people.");
-     if(message.mentions.users.first()) return message.mentions.users.first().send(msg);
-      message.channel.send("User has been DM'ed! Thanks.");
+     message.channel.send("User has been DM'ed! Thanks.");
       message.delete().catch(O_o=>{});
-    
+      
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant DM people.");
+     if(message.mentions.users.first()) return message.mentions.users.first().send(msg);
   }
 
 //---------------------------------------------------------------\\//---------------------------------------------------------------\\
@@ -142,6 +142,7 @@ if (cmd === `${prefix}report`){
    let reason = args.join(" ").slice(22);
 
    let reportembed = new Discord.RichEmbed()
+   .setThumbnail("https://cdn.discordapp.com/attachments/485822207306498048/485844218217234468/piz.png")   
    .setDescription("Reports")
    .setColor("#c700ff")
    .addField("Reported User", `${rUser} with ID: ${rUser.id}`)
@@ -173,6 +174,7 @@ if (cmd === `${prefix}report`){
   if(kUser.hasPermission("KICK_MEMBERS")) return message.reply("Sorry that user cannot be kicked.");
 
   let kEmbed = new Discord.RichEmbed()
+   .setThumbnail("https://cdn.discordapp.com/attachments/485822207306498048/485844218217234468/piz.png") 
   .setDescription("/KICK/")
   .setColor("#62a4f5")
   .addField("Kicked User.", `${kUser} with the ID: ${kUser.id}`)
@@ -206,6 +208,7 @@ if (cmd === `${prefix}report`){
   
   
     let bEmbed = new Discord.RichEmbed()
+    .setThumbnail("https://cdn.discordapp.com/attachments/485822207306498048/485844218217234468/piz.png")    
     .setDescription("/BAN/")
     .setColor("#FF0033")
     .addField("Banned User.", `${bUser} with the ID: ${bUser.id}`)
@@ -213,6 +216,7 @@ if (cmd === `${prefix}report`){
     .addField("Channel", message.channel)
     .addField("Time", message.createdAt)
     .addField("Banned Reason", bReason);
+
   
      let bChannel = message.guild.channels.find(`name`, "modlogs");
      if(!bChannel) return message.channel.send("Channnel path not found. :smile:")

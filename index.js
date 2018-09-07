@@ -175,7 +175,7 @@ if (cmd === `${prefix}report`){
    .setDescription("You have been kicked, please bear in mind the administrators now have this kick file Thanks.")
    .addField("Kick reason:", kReason)
    .setColor("#ff0043")
-   .setThumbnailhttps://cdn.discordapp.com/attachments/487644878570913812/487648325357666304/dreamarena_finale_by_artifactdesign-d71ait9.png")
+   .setThumbnail("https://cdn.discordapp.com/attachments/487644878570913812/487648325357666304/dreamarena_finale_by_artifactdesign-d71ait9.png")
    if(message.mentions.users.first()) return message.mentions.users.first().send(kicksend);        
         
         
@@ -216,7 +216,7 @@ if (cmd === `${prefix}report`){
    .setDescription("You have been Banned, please bear in mind the administrators now have this kick file Thanks.")
    .addField("Ban reason:", bReason)
    .setColor("#ff0043")
-   .setThumbnailhttps://cdn.discordapp.com/attachments/487644878570913812/487648325357666304/dreamarena_finale_by_artifactdesign-d71ait9.png")
+   .setThumbnail("https://cdn.discordapp.com/attachments/487644878570913812/487648325357666304/dreamarena_finale_by_artifactdesign-d71ait9.png")
    if(message.mentions.users.first()) return message.mentions.users.first().send(bansend);       
          
   

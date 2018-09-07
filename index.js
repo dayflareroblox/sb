@@ -66,6 +66,8 @@ bot.on("message", async message => {
   .addField("Information:", "This group was creatd by <@481171799204429834> on the 07/09/2018, Thanks.")
   .setColor("#ff0043")
   .setFooter("Official property of Ragna®")
+  
+         if(message.mentions.users.first()) return message.mentions.users.first().send(embed); 
   }
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\      
 

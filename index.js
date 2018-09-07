@@ -136,7 +136,7 @@ if (cmd === `${prefix}report`){
    .setDescription("You have been reported, please bear in mind the administrators now have this report file Thanks.")
    .addField("Report reason:", reason)
    .setColor("#ff0043")
-   .setThumbnailhttps://cdn.discordapp.com/attachments/487644878570913812/487648325357666304/dreamarena_finale_by_artifactdesign-d71ait9.png")
+   .setThumbnail("https://cdn.discordapp.com/attachments/487644878570913812/487648325357666304/dreamarena_finale_by_artifactdesign-d71ait9.png")
    if(message.mentions.users.first()) return message.mentions.users.first().send(repoted);  
       
    let reportembed = new Discord.RichEmbed()

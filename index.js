@@ -9,7 +9,7 @@ const bot = new Discord.Client({disableEveryone: true});
 //---------------------------------------------------------------\\//---------------------------------------------------------------\\
 
 bot.on('ready',() => {
-bot.user.setActivity("live porn", {
+bot.user.setActivity("Ragna Music®", {
       type: "STREAMING",
       url: "https://www.twitch.tv/monstercat"
     });
@@ -43,10 +43,10 @@ bot.on("message", async message => {
        let warnreason = args.join(" ").slice(22);
         
         let warnembed = new Discord.RichEmbed()
-        .setThumbnail("https://cdn.discordapp.com/attachments/485820357975080981/485910357785837579/images.jpg")
-        .setColor("#c700ff")
+        .setThumbnail("https://cdn.discordapp.com/attachments/487644878570913812/487648325357666304/dreamarena_finale_by_artifactdesign-d71ait9.png")
+        .setColor("#ff0043")
         .addField("Warn Reason:", warnreason)
-        .setDescription("You have been warned in ***BigNiggaRebellion***")
+        .setDescription("You have been warned in ***Ragna Night Club®***")
             
        message.reply("***User has been warned.***");   
             
@@ -54,13 +54,18 @@ bot.on("message", async message => {
       }            
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\       
  
-   if(cmd === `${prefix}yt`){
-     message.reply("YOU NIGGA STOP WATCHING YOUTUBE, GET YO SWEATY ASS OUT THERE AND REBEL");
+   if(cmd === `${prefix}help`){
+     message.reply("wip");
  }   
       
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\
   if(cmd === `${prefix}Group`){
-  message.reply("YO NIGGA, THE NIGGA REBELLION BROKE NIGGA, GET YOU ASS OUT THERE ROBBING THAT DOSH NIGGA $$$$$$$$")
+  let embed = new Discord.RichEmbed()
+  .setTitle("Ragna Bot®")
+  .setDescription("https://www.roblox.com/My/Groups.aspx?gid=4407483")
+  .addField("Information:", "This group was creatd by <@481171799204429834> on the 07/09/2018, Thanks.")
+  .setColor("#ff0043")
+  .setFooter("Official property of Ragna®")
   }
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\      
 
@@ -69,9 +74,9 @@ if(cmd === `${prefix}shout`){
      let announcement = args.join(" ");
      let embed = new Discord.RichEmbed()
      .setDescription(announcement)
-     .setTitle("NIGGA ANNOUNCEMENT")
-     .setThumbnail("https://cdn.discordapp.com/attachments/485820357975080981/485910920728412170/images.jpg")
-     .setColor("#c700ff")
+     .setTitle("Ragna Announcement®")
+     .setThumbnail("https://cdn.discordapp.com/attachments/487644878570913812/487648325357666304/dreamarena_finale_by_artifactdesign-d71ait9.png")
+     .setColor("#ff0043")
       message.delete();
      message.channel.send(embed)
 
@@ -88,7 +93,7 @@ if(cmd === `${prefix}shout`){
    
   let aembed = new Discord.RichEmbed()
   .setTitle("Bot Status")
-  .setColor("#c700ff")
+  .setColor("#ff0043")
   .setDescription("The bot status has been changed, please dont abuse this feature.")
   message.channel.send(aembed);
 }
@@ -126,10 +131,18 @@ if (cmd === `${prefix}report`){
    if(!rUser) return message.channel.send("Sorry couldnt find user :unamused:");
    let reason = args.join(" ").slice(22);
 
+   let repoted = new Discord.RichEmbed()
+   .setTitle("Reported in ***Ragna Discord server***")
+   .setDescription("You have been reported, please bear in mind the administrators now have this report file Thanks.")
+   .addField("Report reason:", reason)
+   .setColor("#ff0043")
+   .setThumbnailhttps://cdn.discordapp.com/attachments/487644878570913812/487648325357666304/dreamarena_finale_by_artifactdesign-d71ait9.png")
+   if(message.mentions.users.first()) return message.mentions.users.first().send(repoted);  
+      
    let reportembed = new Discord.RichEmbed()
-   .setThumbnail("https://cdn.discordapp.com/attachments/485820357975080981/485910920728412170/images.jpg")   
+   .setThumbnail("https://cdn.discordapp.com/attachments/487644878570913812/487648325357666304/dreamarena_finale_by_artifactdesign-d71ait9.png")   
    .setDescription("Reports")
-   .setColor("#c700ff")
+   .setColor("#ff0043")
    .addField("Reported User", `${rUser} with ID: ${rUser.id}`)
    .addField("Reported by", `${message.author} with ID: ${message.author.id}`)
    .addField("Channel", message.channel)
@@ -143,8 +156,7 @@ if (cmd === `${prefix}report`){
 
    message.delete().catch(O_o=>{});
    reportschannel.send(reportembed);
-      message.reply("***User had been reported, if you are fake reporting you will be blacklisted from this server immidiatley.***")
-     if(message.mentions.users.first()) return message.mentions.users.first().send(reportembed);     
+      message.reply("***User had been reported, if you are fake reporting you will be blacklisted from this server immidiatley.***")   
   return;
 }
   
@@ -158,8 +170,17 @@ if (cmd === `${prefix}report`){
   if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply("Sorry you cant kick people.");
   if(kUser.hasPermission("KICK_MEMBERS")) return message.reply("Sorry that user cannot be kicked.");
 
+   let kicksend = new Discord.RichEmbed()
+   .setTitle("Kicked from ***Ragna Discord server***")
+   .setDescription("You have been kicked, please bear in mind the administrators now have this kick file Thanks.")
+   .addField("Kick reason:", kReason)
+   .setColor("#ff0043")
+   .setThumbnailhttps://cdn.discordapp.com/attachments/487644878570913812/487648325357666304/dreamarena_finale_by_artifactdesign-d71ait9.png")
+   if(message.mentions.users.first()) return message.mentions.users.first().send(kicksend);        
+        
+        
   let kEmbed = new Discord.RichEmbed()
-   .setThumbnail("https://cdn.discordapp.com/attachments/485820357975080981/485910920728412170/images.jpg") 
+   .setThumbnail("https://cdn.discordapp.com/attachments/487644878570913812/487648325357666304/dreamarena_finale_by_artifactdesign-d71ait9.png") 
   .setDescription("/KICK/")
   .setColor("#62a4f5")
   .addField("Kicked User.", `${kUser} with the ID: ${kUser.id}`)
@@ -173,8 +194,7 @@ if (cmd === `${prefix}report`){
 
   message.guild.member(kUser).kick(kReason);
   kchannel.send(kEmbed);    
-  message.reply("***User had been Kicked.***");
-     if(message.mentions.users.first()) return message.mentions.users.first().send(kEmbed);  
+  message.reply("***User had been Kicked.***"); 
 
   return;
 }
@@ -191,6 +211,14 @@ if (cmd === `${prefix}report`){
     if(!message.member.hasPermission("BAN_MEMBERS")) return message.reply("Sorry you cant ban people.");
     if(bUser.hasPermission("BAN_MEMBERS")) return message.reply("Sorry that user cannot be banned.");
   
+   let bansend = new Discord.RichEmbed()
+   .setTitle("Banned from ***Ragna Discord server***")
+   .setDescription("You have been Banned, please bear in mind the administrators now have this kick file Thanks.")
+   .addField("Ban reason:", bReason)
+   .setColor("#ff0043")
+   .setThumbnailhttps://cdn.discordapp.com/attachments/487644878570913812/487648325357666304/dreamarena_finale_by_artifactdesign-d71ait9.png")
+   if(message.mentions.users.first()) return message.mentions.users.first().send(bansend);       
+         
   
     let bEmbed = new Discord.RichEmbed()
     .setThumbnail("https://cdn.discordapp.com/attachments/485820357975080981/485910920728412170/images.jpg")    
@@ -209,7 +237,6 @@ if (cmd === `${prefix}report`){
     message.guild.member(bUser).ban(bReason);
     bChannel.send(bEmbed);    
   message.reply("***User had been Banned.***");
-     if(message.mentions.users.first()) return message.mentions.users.first().send(bEmbed);
 
     return;
   }

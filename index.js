@@ -67,7 +67,7 @@ bot.on("message", async message => {
   .setColor("#ff0043")
   .setFooter("Official property of Ragna®")
   
-     send(embed); 
+   message.author.send(embed); 
   }
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\      
 

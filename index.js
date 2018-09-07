@@ -11,7 +11,7 @@ const bot = new Discord.Client({disableEveryone: true});
 bot.on('ready',() => {
 bot.user.setActivity("Ragna Music®", {
       type: "STREAMING",
-      url: "https://www.twitch.tv/monstercat"
+      url: "https://www.twitch.tv/Ragna Music"
     });
 })
 

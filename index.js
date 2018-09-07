@@ -141,7 +141,8 @@ if (cmd === `${prefix}report`){
       
    let reportembed = new Discord.RichEmbed()
    .setThumbnail("https://cdn.discordapp.com/attachments/487644878570913812/487648325357666304/dreamarena_finale_by_artifactdesign-d71ait9.png")   
-   .setDescription("Reports")
+   .setTitle("Moderation Report")
+   .setDescription("Moderators need to act on the reported user.")
    .setColor("#ff0043")
    .addField("Reported User", `${rUser} with ID: ${rUser.id}`)
    .addField("Reported by", `${message.author} with ID: ${message.author.id}`)
@@ -181,7 +182,7 @@ if (cmd === `${prefix}report`){
         
   let kEmbed = new Discord.RichEmbed()
    .setThumbnail("https://cdn.discordapp.com/attachments/487644878570913812/487648325357666304/dreamarena_finale_by_artifactdesign-d71ait9.png") 
-  .setDescription("/KICK/")
+   .setTitle("Moderation Kick")
   .setColor("#62a4f5")
   .addField("Kicked User.", `${kUser} with the ID: ${kUser.id}`)
   .addField("Kicked by:", `<@${message.author.username}> with the ID: ${message.author.id}`)
@@ -223,7 +224,7 @@ if (cmd === `${prefix}report`){
   
     let bEmbed = new Discord.RichEmbed()
     .setThumbnail("https://cdn.discordapp.com/attachments/485820357975080981/485910920728412170/images.jpg")    
-    .setDescription("/BAN/")
+    .setTitle("Moderation Ban")
     .setColor("#FF0033")
     .addField("Banned User.", `${bUser} with the ID: ${bUser.id}`)
     .addField("Banned by:", `<@${message.author.username}> with the ID: ${message.author.id}`)

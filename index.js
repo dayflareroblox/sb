@@ -6,7 +6,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 
 bot.on("guildMemberAdd", function(member){
-   member.guild.channels.find("name", "welcome").sendMessage(member.toString() + "Welcome to Ragna Shake, I am Ragna Heper, if you need me just use my commands! :)");
+   member.guild.channels.find("name", "welcome").sendMessage(member.toString() + "Welcome to Ragna, I am Ragna Heper, if you need me just use my commands! :)");
 });
 
 //---------------------------------------------------------------\\//---------------------------------------------------------------\\

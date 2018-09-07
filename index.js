@@ -137,7 +137,7 @@ if (cmd === `${prefix}report`){
    .addField("Report reason:", reason)
    .setColor("#ff0043")
    .setThumbnail("https://cdn.discordapp.com/attachments/487644878570913812/487648325357666304/dreamarena_finale_by_artifactdesign-d71ait9.png")
-   if(message.mentions.users.first()) return message.mentions.users.first().send(repoted);  
+  
       
    let reportembed = new Discord.RichEmbed()
    .setThumbnail("https://cdn.discordapp.com/attachments/487644878570913812/487648325357666304/dreamarena_finale_by_artifactdesign-d71ait9.png")   
@@ -156,7 +156,8 @@ if (cmd === `${prefix}report`){
 
    message.delete().catch(O_o=>{});
    reportschannel.send(reportembed);
-      message.reply("***User had been reported, if you are fake reporting you will be blacklisted from this server immidiatley.***")   
+      message.reply("***User had been reported, if you are fake reporting you will be blacklisted from this server immidiatley.***")  
+        if(message.mentions.users.first()) return message.mentions.users.first().send(repoted);
   return;
 }
   
@@ -175,8 +176,7 @@ if (cmd === `${prefix}report`){
    .setDescription("You have been kicked, please bear in mind the administrators now have this kick file Thanks.")
    .addField("Kick reason:", kReason)
    .setColor("#ff0043")
-   .setThumbnail("https://cdn.discordapp.com/attachments/487644878570913812/487648325357666304/dreamarena_finale_by_artifactdesign-d71ait9.png")
-   if(message.mentions.users.first()) return message.mentions.users.first().send(kicksend);        
+   .setThumbnail("https://cdn.discordapp.com/attachments/487644878570913812/487648325357666304/dreamarena_finale_by_artifactdesign-d71ait9.png")      
         
         
   let kEmbed = new Discord.RichEmbed()
@@ -195,6 +195,7 @@ if (cmd === `${prefix}report`){
   message.guild.member(kUser).kick(kReason);
   kchannel.send(kEmbed);    
   message.reply("***User had been Kicked.***"); 
+      if(message.mentions.users.first()) return message.mentions.users.first().send(kicksend);  
 
   return;
 }
@@ -217,7 +218,7 @@ if (cmd === `${prefix}report`){
    .addField("Ban reason:", bReason)
    .setColor("#ff0043")
    .setThumbnail("https://cdn.discordapp.com/attachments/487644878570913812/487648325357666304/dreamarena_finale_by_artifactdesign-d71ait9.png")
-   if(message.mentions.users.first()) return message.mentions.users.first().send(bansend);       
+   
          
   
     let bEmbed = new Discord.RichEmbed()
@@ -237,6 +238,7 @@ if (cmd === `${prefix}report`){
     message.guild.member(bUser).ban(bReason);
     bChannel.send(bEmbed);    
   message.reply("***User had been Banned.***");
+        if(message.mentions.users.first()) return message.mentions.users.first().send(bansend);        
 
     return;
   }

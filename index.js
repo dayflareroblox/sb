@@ -6,8 +6,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 
 bot.on("guildMemberAdd", function(member){
-   member.guild.channels.find("name", "welcome").sendMessage(member.toString() + "Welcome to Ragna, I am Ragna Heper, if you need me just use my commands! :)");
-});
+   member.guild.channels.find("name", "welcome").sendMessage(member.toString() + "Welcome to ***Ragna Nightclub Communications server*** I am the Ragna helper, I know everything about ragna, but bear in mind not to mess up or abuse in this server! Thanks alot. - Ragna Bot."
 
 //---------------------------------------------------------------\\//---------------------------------------------------------------\\
 
@@ -75,7 +74,8 @@ bot.on("message", async message => {
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\      
 
 if(cmd === `${prefix}shout`){
-   
+    
+   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.reply("Sorry you cannot shout things, its only people with manage messages perms. :)"); 
      let announcement = args.join(" ");
      let embed = new Discord.RichEmbed()
      .setDescription(announcement)

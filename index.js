@@ -7,7 +7,7 @@ const bot = new Discord.Client({disableEveryone: true});
 
 bot.on("guildMemberAdd", function(member){
    member.guild.channels.find("name", "welcome").sendMessage(member.toString() + "Welcome to ***Ragna Nightclub Communications server*** I am the Ragna helper, I know everything about ragna, but bear in mind not to mess up or abuse in this server! Thanks alot. - Ragna Bot.");
-
+});
 //---------------------------------------------------------------\\//---------------------------------------------------------------\\
 
 bot.on('ready',() => {

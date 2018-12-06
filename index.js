@@ -109,7 +109,7 @@ if (cmd === `${prefix}report`){
    let reason = args.join(" ").slice(22);
 
    let repoted = new Discord.RichEmbed()
-   .setTitle("Reported in ***Community United**")
+   .setTitle("Reported in **Community United**")
    .setDescription("You have been reported, please bear in mind the moderators now have this report file Thanks.")
    .addField("Report reason:", reason)
    .setColor("#ff001d")

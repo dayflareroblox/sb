@@ -89,9 +89,10 @@ if(cmd === `${prefix}a`){
    .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520249593271681045/unknown.png")
       
    let channel = message.guild.channels.find(`name`, "announcements");
-      channel.send(embed)
-     message.react(":a:")
-      message.react(":b:")
+channel.send(embed).then(sentEmbed => {
+    sentEmbed.react(":a:")
+    sentEmbed.react(":b:")
+})
    }      
    
   //---------------------------------------------------------------\\//---------------------------------------------------------------\\   

@@ -66,7 +66,18 @@ if(cmd === `${prefix}purge`){
     }).catch().catch((e) => message.channel.send('You can not delete messages older than 14 days.'));
 }   
    
-  //---------------------------------------------------------------\\//---------------------------------------------------------------\\  
+  //---------------------------------------------------------------\\//---------------------------------------------------------------\\
+if(cmd === `${prefix}a`){
+    let an = args.join(" ").slice(22);
+   let embed = new Discord.RichEmbed()
+   .setTitle("Announcement.")
+   .setDescription(an)
+   .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520249593271681045/unknown.png")
+   
+   let channel = message.guild.channels.find(`name`, "reports");
+   channel.send(embed)
+}
+  //---------------------------------------------------------------\\//---------------------------------------------------------------\\
       if(cmd === `${prefix}warn`){
       
    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("***Sorry you cant warn users.***");    

@@ -54,26 +54,31 @@ bot.on("message", async message => {
       }            
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\
    
-      if(cmd === `${prefix}announce`){
-      
-   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("***Invalid Request. Error: ``402``***");    
-     let wUser = message.guild.member(message.mentions.users.first() || message.guilds.members.get(args[0]));
-       if(!wUser) return message.channel.send("Sorry couldnt find user :unamused:");
-       let warnreason = args.join(" ").slice(22);
+ if(cmd === `${prefix}announce`){
+
+  let kUser = message.guild.member(message.mentions.users.first() || message.guilds.members.get(args[0]));
+  if(!kUser) return message.channel.send("User not found. :unamused:");
+  let a = args.join(" ").slice(22);
+  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Invalid Permissions, ``Error: 402``");
+     
         
-        let an = new Discord.RichEmbed()
-        .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520249691753938954/unknown.png")
-        .setColor("#ff001d")
-        .setTitle("Announcement.")
-        .setDescription("You have been warned in **Community United**")
-           
-            
-    let reportschannel = message.guild.channels.find(`name`, "announcements");
-    if(!reportschannel) return message.channel.send("Couldnt find the specified channel path. :unamused:");
-         
-       reportschannel.send(an);
-         reportschannel.send("@everyone ^^");
-      }            
+        
+  let kEmbed = new Discord.RichEmbed()
+   .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520249691753938954/unknown.png") 
+   .setTitle("Announcement")
+  .setDescription(a)
+  .setColor("#ff001d")
+  .addField("Announced by:", `<@${message.author.username}>`)
+  .addField("Time", message.createdAt)
+
+   let kchannel = message.guild.channels.find(`name`, "announcements");
+   if(!kchannel) return message.channel.send("Channnel path not found. :smile:")
+
+  kchannel.send(kEmbed);    
+  message.reply("**Your message has been announced.**");  
+
+  return;
+}           
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\   
  
    if(cmd === `${prefix}help`){

@@ -11,10 +11,8 @@ bot.on("guildMemberAdd", function(member){
 //---------------------------------------------------------------\\//---------------------------------------------------------------\\
 
 bot.on('ready',() => {
-bot.user.setActivity("Watching CU..", {
-      type: "Do Not Disturb",
-    });
-})
+bot.user.setActivity("Watching CU..")
+}
 
 //---------------------------------------------------------------\\//---------------------------------------------------------------\\
 
@@ -48,8 +46,8 @@ bot.on("message", async message => {
        let warnreason = args.join(" ").slice(22);
         
         let warnembed = new Discord.RichEmbed()
-        .setThumbnail("https://cdn.discordapp.com/attachments/490597093971591172/490601114031357952/thDR3EMMI7.jpg")
-        .setColor("#2A363B")
+        .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520252792875778057/unknown.png")
+        .setColor("#ff001d")
         .addField("Warn Reason:", warnreason)
         .setDescription("You have been warned in ***Community United***")
             
@@ -63,34 +61,7 @@ bot.on("message", async message => {
      message.reply("wip");
  }   
       
- //---------------------------------------------------------------\\//---------------------------------------------------------------\\
-  if(cmd === `${prefix}Group`){
-  let embed = new Discord.RichEmbed()
-  .setTitle("|-| REDACTED |-|")
-  .setDescription("https://www.roblox.com/My/Groups.aspx?gid=4424577")
-  .addField("Information:", "This group was creatd by <@481171799204429834> on the 07/09/2018, Thanks.")
-  .setColor("#2A363B")
-  .setFooter("Any information leak of this group will result in a CE in order of the internal Security Department.")
-  
-   message.author.send(embed); 
-  }
- //---------------------------------------------------------------\\//---------------------------------------------------------------\\      
-
-if(cmd === `${prefix}shout`){
-    
-   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.reply("Sorry you cannot shout things, its only people with manage messages perms. :)"); 
-     let announcement = args.join(" ");
-     let embed = new Discord.RichEmbed()
-     .setDescription(announcement)
-     .setTitle("|-| Announcement |-|")
-     .setThumbnail("https://cdn.discordapp.com/attachments/490597093971591172/490601114031357952/thDR3EMMI7.jpg")
-     .setColor("#2A363B")
-      message.delete();
-     message.channel.send(embed)
-
-}   
-
- //---------------------------------------------------------------\\//---------------------------------------------------------------\\   
+ //---------------------------------------------------------------\\//---------------------------------------------------------------\\        
 
  if(cmd === `${prefix}status`){
 
@@ -101,7 +72,7 @@ if(cmd === `${prefix}shout`){
    
   let aembed = new Discord.RichEmbed()
   .setTitle("Bot Status")
-  .setColor("#2A363B")
+  .setColor("#ff001d")
   .setDescription("The bot status has been changed, please dont abuse this feature.")
   message.channel.send(aembed);
 }
@@ -140,18 +111,18 @@ if (cmd === `${prefix}report`){
    let reason = args.join(" ").slice(22);
 
    let repoted = new Discord.RichEmbed()
-   .setTitle("Reported in ***|-| SCPF |-| Secure Contain Protect**")
-   .setDescription("You have been reported, please bear in mind the administrators now have this report file Thanks.")
+   .setTitle("Reported in ***Community United**")
+   .setDescription("You have been reported, please bear in mind the moderators now have this report file Thanks.")
    .addField("Report reason:", reason)
-   .setColor("#2A363B")
-   .setThumbnail("https://cdn.discordapp.com/attachments/490597093971591172/490601114031357952/thDR3EMMI7.jpg")
+   .setColor("#ff001d")
+   .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520254927973384202/unknown.png")
   
       
    let reportembed = new Discord.RichEmbed()
-   .setThumbnail("https://cdn.discordapp.com/attachments/490597093971591172/490601114031357952/thDR3EMMI7.jpg")   
+   .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520254927973384202/unknown.png")   
    .setTitle("Moderation Report")
    .setDescription("Moderators need to act on the reported user.")
-   .setColor("#2A363B")
+   .setColor("#ff001d")
    .addField("Reported User", `${rUser} with ID: ${rUser.id}`)
    .addField("Reported by", `${message.author} with ID: ${message.author.id}`)
    .addField("Channel", message.channel)
@@ -165,7 +136,7 @@ if (cmd === `${prefix}report`){
 
    message.delete().catch(O_o=>{});
    reportschannel.send(reportembed);
-      message.reply("***User had been reported, if you are fake reporting you will be blacklisted from this server immidiatley.***")  
+      message.reply("**Your report file has been sent to the moderators, thanks alot.**")  
         if(message.mentions.users.first()) return message.mentions.users.first().send(repoted);
   return;
 }
@@ -181,17 +152,17 @@ if (cmd === `${prefix}report`){
   if(kUser.hasPermission("KICK_MEMBERS")) return message.reply("Sorry that user cannot be kicked.");
 
    let kicksend = new Discord.RichEmbed()
-   .setTitle("Kicked from ***|-| SCPF |-| Secure Contain Protect***")
+   .setTitle("Kicked from ***Community United.***")
    .setDescription("You have been kicked, please bear in mind the administrators now have this kick file Thanks.")
    .addField("Kick reason:", kReason)
-   .setColor("#2A363B")
-   .setThumbnail("https://cdn.discordapp.com/attachments/490597093971591172/490601114031357952/thDR3EMMI7.jpg")      
+   .setColor("#ff001d")
+   .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520252599350460447/unknown.png")      
         
         
   let kEmbed = new Discord.RichEmbed()
-   .setThumbnail("https://cdn.discordapp.com/attachments/490597093971591172/490601114031357952/thDR3EMMI7.jpg") 
+   .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520252599350460447/unknown.png") 
    .setTitle("Moderation Kick")
-  .setColor("#2A363B")
+  .setColor("#ff001d")
   .addField("Kicked User.", `${kUser} with the ID: ${kUser.id}`)
   .addField("Kicked by:", `<@${message.author.username}> with the ID: ${message.author.id}`)
   .addField("Channel", message.channel)
@@ -222,18 +193,18 @@ if (cmd === `${prefix}report`){
     if(bUser.hasPermission("BAN_MEMBERS")) return message.reply("Sorry that user cannot be banned.");
   
    let bansend = new Discord.RichEmbed()
-   .setTitle("Banned from ***|-| SCPF |-| Secure Contain Protect***")
+   .setTitle("Banned from ***Community United.***")
    .setDescription("You have been Banned, please bear in mind the administrators now have this kick file Thanks.")
    .addField("Ban reason:", bReason)
-   .setColor("#2A363B")
-   .setThumbnail("https://cdn.discordapp.com/attachments/490597093971591172/490601114031357952/thDR3EMMI7.jpg")
+   .setColor("#ff001d")
+   .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520252506555547649/unknown.png")
    
          
   
     let bEmbed = new Discord.RichEmbed()
-    .setThumbnail("https://cdn.discordapp.com/attachments/490597093971591172/490601114031357952/thDR3EMMI7.jpg")    
+    .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520252506555547649/unknown.png")    
     .setTitle("Moderation Ban")
-    .setColor("#2A363B")
+    .setColor("#ff001d")
     .addField("Banned User.", `${bUser} with the ID: ${bUser.id}`)
     .addField("Banned by:", `<@${message.author.username}> with the ID: ${message.author.id}`)
     .addField("Channel", message.channel)

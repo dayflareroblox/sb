@@ -46,10 +46,9 @@ bot.on("message", async message => {
  
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\
    
-bot.on("guildMemberAdd", function(member) {
-    let role = member.guild.roles.find("name", "Community Member");
-    member.addRole(role).catch(console.error);
-});  
+client.on('guildMemberAdd', (guildMember) => {
+   guildMember.addRole(guildMember.guild.roles.find(role => role.name === "Community Member"));
+}
    
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\   
 

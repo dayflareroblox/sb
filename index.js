@@ -10,7 +10,11 @@ bot.on("guildMemberAdd", function(member){
 });
 //---------------------------------------------------------------\\//---------------------------------------------------------------\\
 
-bot.user.setActivity("Watching CU..")
+function changing_status() {
+    let status = ['Watching CU..', 'Say !help if you need me..', 'Made by ScriptedBuilderz..']
+    let random = status[Math.floor(Math.random() * status.length)]
+    bot.user.setActivity(random)
+}
 
 //---------------------------------------------------------------\\//---------------------------------------------------------------\\
 

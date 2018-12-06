@@ -97,7 +97,7 @@ if(cmd === `${prefix}purge`){
 
 }
 var servers = {};
-var prefix = '!;
+var prefix = '!';
 client.on("message", async message => {
     var args = message.content.substring(prefix.length).split(" ");
     if (!message.content.startsWith(prefix)) return;

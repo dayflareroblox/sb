@@ -43,30 +43,95 @@ bot.on("message", async message => {
 }  
  
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\
- 
-   bot.on('message', msg => {
-
-  if(msg.content.includes("wtf")){
-    if(msg.content.includes("fuck")){
-    }
-    if(msg.content.includes("bitch")){
-    }
-    if(msg.content.includes("BITCH")){
-    }   
-    if(msg.content.includes("FUCK")){
-    }   
-    if(msg.content.includes("cunt")){
-    }
-    if(msg.content.includes("CUNT")){
-    }
-    if(msg.content.includes("bastard")){
-    }   
-    if(msg.content.includes("BASTARD")){
-    }      
-   msg.delete();
-   msg.reply("***bad words are disable in sever***:rage:") .then(xnxx => {xnxx.delete(5000)})
-  }
-});
+var filterWords = [
+    "anal",
+    "anus",
+    "arse",
+    "nigger",
+    "nigga",
+    "ballsack",
+    "balls",
+    "bastard",
+    "bitch",
+    "biatch",
+    "blowjob",
+    "blow job",
+    "bollock",
+    "bollok",
+    "boner",
+    "boob",
+    "bugger",
+    "bum",
+    "buttplug",
+    "clitoris",
+    "cock",
+    "coon",
+    "cunt",
+    "dick",
+    "dildo",
+    "dyke",
+    "fag",
+    "feck",
+    "fellate",
+    "fellatio",
+    "felching",
+    "fucker",
+    "fucking",
+    "fuck",
+    "f u c k",
+    "fudgepacker",
+    "fudge packer",
+    "flang",
+    "homo",
+    "jizz",
+    "knobend",
+    "knob end",
+    "labia",
+    "muff",
+    "penis",
+    "prick",
+    "pube",
+    "pussy",
+    "queer",
+    "scrotum",
+    "sex",
+    "shit",
+    "s hit",
+    "sh1t",
+    "slut",
+    "smegma",
+    "fucken",
+    "spunk",
+    "tit",
+    "tosser",
+    "turd",
+    "twat",
+    "vagina",
+    "wank",
+    "whore",
+    "mofucker",
+    "niger"
+];
+   
+   bot.on("message", message => {
+            switch (true) {
+                case message.author.bot:
+                    return;
+                case new RegExp(filterWords.join("|")).test(message.content.toLowerCase()):
+                    const guild = client.guilds.find(guild => guild.id);
+                    let edit = message.content.toLowerCase();
+                    for (var i in filterWords) {
+                        edit = edit.replace(new RegExp(filterWords[i], "g"), "`*****`");
+                    }
+                    message.delete();
+                    message.channel.send("", {
+                        embed: new Discord.RichEmbed()
+                            .setColor("RANDOM")
+                            .setTitle("New Message")
+                            .setDescription(edit)
+                    });
+            }
+        }
 
    
   //---------------------------------------------------------------\\//---------------------------------------------------------------\\  

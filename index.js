@@ -3,7 +3,7 @@
 const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 
-const bot = new Discord.Client({disableEveryone: true});
+const bot = new Discord.Client({disableEveryone: false});
 
 bot.on("guildMemberAdd", function(member){
    member.guild.channels.find("name", "welcome").sendMessage(member.toString() + "Welcome to Community United, I am Community bot, and I am your helper, if you need me just say !help");
@@ -55,7 +55,12 @@ bot.on("message", async message => {
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\       
  
    if(cmd === `${prefix}help`){
-     message.reply("wip");
+     let embed = new Discord.RichEmbed()
+     .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520249593271681045/unknown.png")
+     .setDescription("Welcome to the Help page, I am CB and I am here to help ya!")
+     .setColor("#ff001d")
+     .addField("For commands say:", "!cmds")
+     .setFooter("For extra info DM a helper.")
  }   
       
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\        

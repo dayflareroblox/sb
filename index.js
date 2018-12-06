@@ -74,7 +74,7 @@ if(cmd === `${prefix}a`){
    .setDescription(an)
    .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520249593271681045/unknown.png")
    
-   let channel = message.guild.channels.find(`name`, "reports");
+   let channel = message.guild.channels.find(`name`, "announcements");
    channel.send(embed)
 }
   //---------------------------------------------------------------\\//---------------------------------------------------------------\\

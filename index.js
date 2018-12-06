@@ -6,14 +6,13 @@ const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 
 bot.on("guildMemberAdd", function(member){
-   member.guild.channels.find("name", "welcome").sendMessage(member.toString() + "Welcome to ***|-| SCPF |-| Secure Contain Protect*** I am the SCPF bot, I know everything about SCP, but bear in mind not to mess up or abuse in this server! Thanks alot. - |-| SCP |-| Bot.");
+   member.guild.channels.find("name", "welcome").sendMessage(member.toString() + "Welcome to Community United, I am Community bot, and I am your helper, if you need me just say !cb help");
 });
 //---------------------------------------------------------------\\//---------------------------------------------------------------\\
 
 bot.on('ready',() => {
-bot.user.setActivity("Channel [REDACTED]", {
-      type: "STREAMING",
-      url: "https://www.twitch.tv/SCP Broadcast"
+bot.user.setActivity("Watching CU..", {
+      type: "Do Not Disturb",
     });
 })
 
@@ -52,7 +51,7 @@ bot.on("message", async message => {
         .setThumbnail("https://cdn.discordapp.com/attachments/490597093971591172/490601114031357952/thDR3EMMI7.jpg")
         .setColor("#2A363B")
         .addField("Warn Reason:", warnreason)
-        .setDescription("You have been warned in ***|-| SCPF |-| Secure Contain Protect***")
+        .setDescription("You have been warned in ***Community United***")
             
        message.reply("***User has been warned.***");   
             

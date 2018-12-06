@@ -17,7 +17,7 @@ function changing_status() {
 }
 
 bot.on("ready", () => {
-    console.log( /*Whatever you want to say*/ );
+    console.log("Changed");
     setInterval(changing_status, 9000);
 })
 

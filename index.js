@@ -10,7 +10,7 @@ bot.on("guildMemberAdd", function(member){
 });
 //---------------------------------------------------------------\\//---------------------------------------------------------------\\
 
-
+   bot.user.setStatus('dnd', 'Watching over CU.') 
 
 //---------------------------------------------------------------\\//---------------------------------------------------------------\\
 
@@ -47,9 +47,9 @@ bot.on("message", async message => {
         .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520252792875778057/unknown.png")
         .setColor("#ff001d")
         .addField("Warn Reason:", warnreason)
-        .setDescription("You have been warned in ***Community United***")
+        .setDescription("You have been warned in **Community United**")
             
-       message.reply("***User has been warned.***");   
+       message.reply("**User has been warned.**");   
             
        if(message.mentions.users.first()) return message.mentions.users.first().send(warnembed);       
       }            

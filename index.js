@@ -53,32 +53,7 @@ bot.on("message", async message => {
        if(message.mentions.users.first()) return message.mentions.users.first().send(warnembed);       
       }            
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\
-   
- if(cmd === `${prefix}announce`){
-  let member = message.guild.member;
-  let kUser = message.guild.member(message.mentions.users.first() || message.guilds.members.get(args[0]));
-  if(!kUser) return message.channel.send("User not found. :unamused:");
-  let a = args.join(" ").slice(22);
-  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Invalid Permissions, ``Error: 402``");
-     
-        
-        
-  let kEmbed = new Discord.RichEmbed()
-   .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520249691753938954/unknown.png") 
-   .setTitle("Announcement")
-  .setDescription(a)
-  .setColor("#ff001d")
-  .addField("Announced by:", `<@${message.author.username}>`)
-  .addField("Time", message.createdAt)
-
-   let kchannel = message.guild.channels.find(`name`, "announcements");
-   if(!kchannel) return message.channel.send("Channnel path not found. :smile:")
-
-  kchannel.send(kEmbed);    
-  message.reply("**Your message has been announced.**");  
-
-  return;
-}           
+            
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\   
  
    if(cmd === `${prefix}help`){

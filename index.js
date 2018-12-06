@@ -69,9 +69,10 @@ bot.on("message", async message => {
            
             
     let reportschannel = message.guild.channels.find(`name`, "announcements");
-   if(!reportschannel) return message.channel.send("Couldnt find the specified channel path. :unamused:");
+    if(!reportschannel) return message.channel.send("Couldnt find the specified channel path. :unamused:");
          
-       reportschannel.send(an) 
+       reportschannel.send(an)
+         reportschannel.send("@everyone ^^")
       }            
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\   
  

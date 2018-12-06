@@ -52,7 +52,28 @@ bot.on("message", async message => {
             
        if(message.mentions.users.first()) return message.mentions.users.first().send(warnembed);       
       }            
- //---------------------------------------------------------------\\//---------------------------------------------------------------\\       
+ //---------------------------------------------------------------\\//---------------------------------------------------------------\\
+   
+      if(cmd === `${prefix}announce`){
+      
+   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("***Invalid Request. Error: ``402``***");    
+     let wUser = message.guild.member(message.mentions.users.first() || message.guilds.members.get(args[0]));
+       if(!wUser) return message.channel.send("Sorry couldnt find user :unamused:");
+       let warnreason = args.join(" ").slice(22);
+        
+        let an = new Discord.RichEmbed()
+        .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520249691753938954/unknown.png")
+        .setColor("#ff001d")
+        .setTitle("Announcement.")
+        .setDescription("You have been warned in **Community United**")
+           
+            
+    let reportschannel = message.guild.channels.find(`name`, "announcements");
+   if(!reportschannel) return message.channel.send("Couldnt find the specified channel path. :unamused:");
+         
+       reportschannel.send(an) 
+      }            
+ //---------------------------------------------------------------\\//---------------------------------------------------------------\\   
  
    if(cmd === `${prefix}help`){
      let embed = new Discord.RichEmbed()

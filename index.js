@@ -8,7 +8,7 @@ const client = new Discord.Client();
 const bot = new Discord.Client({disableEveryone: false});
 
 bot.on("guildMemberAdd", function(member){
-   member.guild.channels.find("name", "welcome").sendMessage(member.toString() + "Welcome to Community United, I am Community bot, and I am your helper, if you need me just say !help");
+   member.guild.channels.find("name", "join-logs").sendMessage(member.toString() + "Welcome to Community United, I am Community bot, and I am your helper, if you need me just say !help");
 });
 //---------------------------------------------------------------\\//---------------------------------------------------------------\\
 

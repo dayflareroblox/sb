@@ -118,7 +118,7 @@ var filterWords = [
                 case message.author.bot:
                     return;
                 case new RegExp(filterWords.join("|")).test(message.content.toLowerCase()):
-                    const guild = client.guilds.find(guild => guild.id);
+                    const guild = bot.guilds.find(guild => guild.id);
                     let edit = message.content.toLowerCase();
                     for (var i in filterWords) {
                         edit = edit.replace(new RegExp(filterWords[i], "g"), "`*****`");

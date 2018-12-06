@@ -44,7 +44,7 @@ bot.on("message", async message => {
  
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\
  
-   client.on('message', msg => {
+   bot.on('message', msg => {
 
   if(msg.content.includes("wtf")){
     if(msg.content.includes("fuck")){

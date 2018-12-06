@@ -90,8 +90,8 @@ if(cmd === `${prefix}a`){
       
    let channel = message.guild.channels.find(`name`, "announcements");
 channel.send(embed).then(sentEmbed => {
-    sentEmbed.react(":a:")
-    sentEmbed.react(":b:")
+    sentEmbed.react("👍")
+    sentEmbed.react("👎")
 })
    }      
    

@@ -80,7 +80,6 @@ if(cmd === `${prefix}purge`){
        if(message.mentions.users.first()) return message.mentions.users.first().send(warnembed);       
       }            
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\
-if(cmd === `${prefix}lockdown`){
    exports.run = (client, message, args) => {
 if (!message.guild.member(message.author).hasPermission("MANAGE_SERVER")) return message.channel.send("Sorry sir you are not an Administrator so you can't use this command. Administrators are the people who possess the `Manage_Server` permission.")
   if (!client.lockit) client.lockit = [];
@@ -138,7 +137,7 @@ exports.help = {
   description: "This will lock a channel down for the set duration, be it in hours, minutes or seconds.",
   usage: "lockdown <duration>"
 };
-}   
+  
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\   
  
    if(cmd === `${prefix}help`){

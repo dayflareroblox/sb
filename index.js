@@ -77,7 +77,7 @@ if(cmd === `${prefix}a`){
    
    let channel = message.guild.channels.find(`name`, "announcements");
    channel.send(embed)
-   channel.send("<@everyone>")
+   channel.send("@everyone")
 }
   //---------------------------------------------------------------\\//---------------------------------------------------------------\\
       if(cmd === `${prefix}warn`){

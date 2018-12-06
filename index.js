@@ -68,7 +68,8 @@ if(cmd === `${prefix}purge`){
    
   //---------------------------------------------------------------\\//---------------------------------------------------------------\\
 if(cmd === `${prefix}a`){
-    let an = args.join(" ").slice(22);
+    let an = args.join(" ");
+
    let embed = new Discord.RichEmbed()
    .setTitle("Announcement.")
    .setDescription(an)

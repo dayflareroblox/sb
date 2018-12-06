@@ -74,6 +74,8 @@ bot.on("message", async message => {
      .setColor("#ff001d")
      .addField("For commands say:", "!cmds")
      .setFooter("For extra info DM a helper.")
+     
+     message.channel.send(embed)
  }   
       
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\        

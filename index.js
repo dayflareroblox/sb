@@ -5,7 +5,6 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 
 
-
 const bot = new Discord.Client({disableEveryone: false});
 
 bot.on("guildMemberAdd", function(member){
@@ -46,6 +45,13 @@ bot.on("message", async message => {
 }  
  
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\
+   
+bot.on("guildMemberAdd", function(member) {
+    let role = member.guild.roles.find("name", "Community Member");
+    member.addRole(role).catch(console.error);
+});  
+   
+ //---------------------------------------------------------------\\//---------------------------------------------------------------\\   
 
 if(cmd === `${prefix}purge`){
      if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('Sorry, but you do not have the **Manage Messages** permissions! If you think this is an error, contact an owner.')

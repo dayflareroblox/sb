@@ -82,20 +82,16 @@ if(cmd === `${prefix}a`){
   //---------------------------------------------------------------\\//---------------------------------------------------------------\\
    
    if(cmd === `${prefix}poll`){
-      let A = args.join(" ");
-      let B = args.join("  ");      
+      let A = args.join(" ");      
       let embed = new Discord.RichEmbed()
       .setTitle("Poll.")
-      .addField("A:", A)
-      .addField("B:", B)
+      .setDescription(A)
    .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520249593271681045/unknown.png")
       
    let channel = message.guild.channels.find(`name`, "announcements");
-      let msg = await channel.send(embed)
-      .then(function (msg)
-            msg.react(":A:");
-            msg.react(":B:");
-   )
+      channel.send(embed)
+      embed.react(":a:");
+      embed.react(":b:");
    }      
    
   //---------------------------------------------------------------\\//---------------------------------------------------------------\\   

@@ -3,7 +3,7 @@
 const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 
-const bot = new Discord.Client({disableEveryone: true});
+const bot = new Discord.Client({disableEveryone: false});
 
 bot.on("guildMemberAdd", function(member){
    member.guild.channels.find("name", "welcome").sendMessage(member.toString() + "Welcome to Community United, I am Community bot, and I am your helper, if you need me just say !help");
@@ -55,7 +55,7 @@ bot.on("message", async message => {
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\
    
  if(cmd === `${prefix}announce`){
-
+  let member = message.guild.member;
   let kUser = message.guild.member(message.mentions.users.first() || message.guilds.members.get(args[0]));
   if(!kUser) return message.channel.send("User not found. :unamused:");
   let a = args.join(" ").slice(22);

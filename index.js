@@ -11,10 +11,16 @@ bot.on("guildMemberAdd", function(member){
 //---------------------------------------------------------------\\//---------------------------------------------------------------\\
 
 function changing_status() {
-    let status = ['Watching CU..', 'Say !help if you need me..', 'Made by ScriptedBuilderz..']
+    let status = ['Watching CU..', 'Say !help if ya need me..', 'Made by ScriptedBuilderz..']
     let random = status[Math.floor(Math.random() * status.length)]
     bot.user.setActivity(random)
 }
+
+bot.on("ready", () => {
+    console.log( /*Whatever you want to say*/ );
+    setInterval(changing_status, 9000);
+})
+
 
 //---------------------------------------------------------------\\//---------------------------------------------------------------\\
 

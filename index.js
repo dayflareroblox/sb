@@ -8,19 +8,19 @@ const client = new Discord.Client();
 const bot = new Discord.Client({disableEveryone: false});
 
 bot.on("guildMemberAdd", function(member){
-   member.guild.channels.find("name", "join-logs").sendMessage(member.toString() + "Welcome to Community United, I am Community bot, and I am your helper, if you need me just say !help");
+   member.guild.channels.find("name", "welcome-logs").sendMessage(member.toString() + "Welcome to **Smoke Burger**, Make sure to read the rules and be on your best behaviour!");
 });
 //---------------------------------------------------------------\\//---------------------------------------------------------------\\
 
 function changing_status() {
-    let status = ['Watching CU..', 'Say !help if ya need me..', 'Made by ScriptedBuilderz..']
+    let status = ['Looking over Smoke Burger..', 'Say ?help if you need me.', 'Made by ScriptedBuilderz..']
     let random = status[Math.floor(Math.random() * status.length)]
     bot.user.setActivity(random)
 }
 
 bot.on("ready", () => {
     console.log("Changed");
-    setInterval(changing_status, 9000);
+    setInterval(changing_status, 2000);
 })
 
 
@@ -46,9 +46,6 @@ bot.on("message", async message => {
  
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\
    
-client.on('serverNewMember', function(server, user) {
-     user.addTo(server.roles.get("name", "Community Member"));
-});
    
  //---------------------------------------------------------------\\//---------------------------------------------------------------\\   
 
@@ -73,7 +70,7 @@ if(cmd === `${prefix}a`){
    let embed = new Discord.RichEmbed()
    .setTitle("Announcement.")
    .setDescription(an)
-   .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520249593271681045/unknown.png")
+   .setThumbnail("https://cdn.discordapp.com/attachments/521737357385400325/522068141166166048/3f00e193c464cb6a56e3fd4ea6b79641.png")
    
    let channel = message.guild.channels.find(`name`, "announcements");
    channel.send(embed)
@@ -86,7 +83,7 @@ if(cmd === `${prefix}a`){
       let embed = new Discord.RichEmbed()
       .setTitle("Poll.")
       .setDescription(A)
-   .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520249593271681045/unknown.png")
+   .setThumbnail("https://cdn.discordapp.com/attachments/521737357385400325/522068141166166048/3f00e193c464cb6a56e3fd4ea6b79641.png")
       
    let channel = message.guild.channels.find(`name`, "announcements");
 channel.send(embed).then(sentEmbed => {
@@ -104,10 +101,10 @@ channel.send(embed).then(sentEmbed => {
        let warnreason = args.join(" ").slice(22);
         
         let warnembed = new Discord.RichEmbed()
-        .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520252792875778057/unknown.png")
+        .setThumbnail("https://cdn.discordapp.com/attachments/521737357385400325/522068141166166048/3f00e193c464cb6a56e3fd4ea6b79641.png")
         .setColor("#ff001d")
         .addField("Warn Reason:", warnreason)
-        .setDescription("You have been warned in **Community United**")
+        .setDescription("You have been warned in **Smoke Burger.**")
             
        message.reply("**User has been warned.**");   
             
@@ -119,11 +116,11 @@ channel.send(embed).then(sentEmbed => {
  
    if(cmd === `${prefix}help`){
      let embed = new Discord.RichEmbed()
-     .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520249593271681045/unknown.png")
-     .setDescription("Welcome to the Help page, I am CB and I am here to help ya!")
+     .setThumbnail("https://cdn.discordapp.com/attachments/521737357385400325/522068141166166048/3f00e193c464cb6a56e3fd4ea6b79641.png")
+     .setDescription("Hello! Below are some tips for more help.")
      .setColor("#ff001d")
      .addField("For commands say:", "!cmds")
-     .setFooter("For extra info DM a helper.")
+     .setFooter("For extra info DM a regiional manager+.")
      
      message.channel.send(embed)
  }   
@@ -178,15 +175,15 @@ if (cmd === `${prefix}report`){
    let reason = args.join(" ").slice(22);
 
    let repoted = new Discord.RichEmbed()
-   .setTitle("Reported in **Community United**")
+   .setTitle("Reported in **Smoke Burger**")
    .setDescription("You have been reported, please bear in mind the moderators now have this report file Thanks.")
    .addField("Report reason:", reason)
    .setColor("#ff001d")
-   .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520254927973384202/unknown.png")
+   .setThumbnail("https://cdn.discordapp.com/attachments/521737357385400325/522068141166166048/3f00e193c464cb6a56e3fd4ea6b79641.png")
   
       
    let reportembed = new Discord.RichEmbed()
-   .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520254927973384202/unknown.png")   
+   .setThumbnail("https://cdn.discordapp.com/attachments/521737357385400325/522068141166166048/3f00e193c464cb6a56e3fd4ea6b79641.png")   
    .setTitle("Moderation Report")
    .setDescription("Moderators need to act on the reported user.")
    .setColor("#ff001d")
@@ -197,7 +194,7 @@ if (cmd === `${prefix}report`){
    .addField("Report Reason", reason);
 
 
-   let reportschannel = message.guild.channels.find(`name`, "reports");
+   let reportschannel = message.guild.channels.find(`name`, "high-ranks-reports");
    if(!reportschannel) return message.channel.send("Couldnt find the specified channel path. :unamused:");
    
 
@@ -219,15 +216,15 @@ if (cmd === `${prefix}report`){
   if(kUser.hasPermission("KICK_MEMBERS")) return message.reply("Sorry that user cannot be kicked.");
 
    let kicksend = new Discord.RichEmbed()
-   .setTitle("Kicked from ***Community United.***")
+   .setTitle("Kicked from ***Smoke Burger.***")
    .setDescription("You have been kicked, please bear in mind the administrators now have this kick file Thanks.")
    .addField("Kick reason:", kReason)
    .setColor("#ff001d")
-   .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520252599350460447/unknown.png")      
+   .setThumbnail("https://cdn.discordapp.com/attachments/521737357385400325/522068141166166048/3f00e193c464cb6a56e3fd4ea6b79641.png")      
         
         
   let kEmbed = new Discord.RichEmbed()
-   .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520252599350460447/unknown.png") 
+   .setThumbnail("https://cdn.discordapp.com/attachments/521737357385400325/522068141166166048/3f00e193c464cb6a56e3fd4ea6b79641.png") 
    .setTitle("Moderation Kick")
   .setColor("#ff001d")
   .addField("Kicked User.", `${kUser} with the ID: ${kUser.id}`)
@@ -236,12 +233,12 @@ if (cmd === `${prefix}report`){
   .addField("Time", message.createdAt)
   .addField("Kick Reason", kReason);
 
-   let kchannel = message.guild.channels.find(`name`, "modlogs");
+   let kchannel = message.guild.channels.find(`name`, "high-ranks-reports");
    if(!kchannel) return message.channel.send("Channnel path not found. :smile:")
 
   message.guild.member(kUser).kick(kReason);
   kchannel.send(kEmbed);    
-  message.reply("***User had been Kicked.***"); 
+  message.reply("**User had been Kicked.**"); 
       if(message.mentions.users.first()) return message.mentions.users.first().send(kicksend);  
 
   return;
@@ -260,16 +257,16 @@ if (cmd === `${prefix}report`){
     if(bUser.hasPermission("BAN_MEMBERS")) return message.reply("Sorry that user cannot be banned.");
   
    let bansend = new Discord.RichEmbed()
-   .setTitle("Banned from ***Community United.***")
+   .setTitle("Banned from ***Smoke Burger.***")
    .setDescription("You have been Banned, please bear in mind the administrators now have this kick file Thanks.")
    .addField("Ban reason:", bReason)
    .setColor("#ff001d")
-   .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520252506555547649/unknown.png")
+   .setThumbnail("https://cdn.discordapp.com/attachments/521737357385400325/522068141166166048/3f00e193c464cb6a56e3fd4ea6b79641.png")
    
          
   
     let bEmbed = new Discord.RichEmbed()
-    .setThumbnail("https://cdn.discordapp.com/attachments/520216250589118465/520252506555547649/unknown.png")    
+    .setThumbnail("https://cdn.discordapp.com/attachments/521737357385400325/522068141166166048/3f00e193c464cb6a56e3fd4ea6b79641.png")    
     .setTitle("Moderation Ban")
     .setColor("#ff001d")
     .addField("Banned User.", `${bUser} with the ID: ${bUser.id}`)
@@ -279,7 +276,7 @@ if (cmd === `${prefix}report`){
     .addField("Banned Reason", bReason);
 
   
-     let bChannel = message.guild.channels.find(`name`, "modlogs");
+     let bChannel = message.guild.channels.find(`name`, "high-ranks-reports");
      if(!bChannel) return message.channel.send("Channnel path not found. :smile:")
   
     message.guild.member(bUser).ban(bReason);

@@ -120,7 +120,7 @@ channel.send(embed).then(sentEmbed => {
      .setDescription("Hello! Below are some tips for more help.")
      .setColor("#ff001d")
      .addField("For commands say:", "!cmds")
-     .setFooter("For extra info DM a regiional manager+.")
+     .setFooter("For extra info DM a regional manager+.")
      
      message.channel.send(embed)
  }   

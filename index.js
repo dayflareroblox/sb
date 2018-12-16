@@ -82,6 +82,25 @@ if (message.member.roles.find('name', 'HR')) {
 }
   //---------------------------------------------------------------\\//---------------------------------------------------------------\\
    
+if(cmd === `${prefix}shift`){
+    let an = args.join(" ");
+if (message.member.roles.find('name', 'MR')) {
+   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant announce things.");
+   let embed = new Discord.RichEmbed()
+   .setTitle("Shift.")
+   .addField("Game:", "https://www.roblox.com/games/2633193389/Smoke-Burger")  
+   .setDescription(an)
+   .setThumbnail("https://cdn.discordapp.com/attachments/521737357385400325/522068141166166048/3f00e193c464cb6a56e3fd4ea6b79641.png")
+   
+   let channel = message.guild.channels.find(`name`, "session-announcements");
+   channel.send(embed)
+   channel.send("@everyone")
+} else {
+    message.channel.send("**Unauthorized Restriction Error: 401**")
+}
+}
+  //---------------------------------------------------------------\\//---------------------------------------------------------------\\   
+   
    if(cmd === `${prefix}poll`){
       let A = args.join(" ");      
       let embed = new Discord.RichEmbed()

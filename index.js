@@ -66,8 +66,8 @@ if(cmd === `${prefix}purge`){
   //---------------------------------------------------------------\\//---------------------------------------------------------------\\
 if(cmd === `${prefix}a`){
     let an = args.join(" ");
-
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant announce things.");
+if (message.member.roles.find('name', 'HR')) {
+   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant announce things.");
    let embed = new Discord.RichEmbed()
    .setTitle("Announcement.")
    .setDescription(an)
@@ -76,6 +76,9 @@ if(cmd === `${prefix}a`){
    let channel = message.guild.channels.find(`name`, "announcements");
    channel.send(embed)
    channel.send("@everyone")
+} else {
+    message.channel.send("**Unauthorized Restriction Error: 401**")
+}
 }
   //---------------------------------------------------------------\\//---------------------------------------------------------------\\
    

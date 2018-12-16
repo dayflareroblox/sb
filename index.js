@@ -67,6 +67,7 @@ if(cmd === `${prefix}purge`){
 if(cmd === `${prefix}a`){
     let an = args.join(" ");
 
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant announce things.");
    let embed = new Discord.RichEmbed()
    .setTitle("Announcement.")
    .setDescription(an)

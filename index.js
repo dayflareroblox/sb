@@ -13,7 +13,7 @@ bot.on("guildMemberAdd", function(member){
 //---------------------------------------------------------------\\//---------------------------------------------------------------\\
 
 function changing_status() {
-    let status = ['Looking over Smoke Burger..', 'Say ?help if you need me.', 'Made by ScriptedBuilderz..']
+    let status = ['Looking over Smoke Burger..', 'Say ?help if you need me.', 'Made by DesiredMercury..']
     let random = status[Math.floor(Math.random() * status.length)]
     bot.user.setActivity(random)
 }
@@ -145,8 +145,8 @@ channel.send(embed).then(sentEmbed => {
      .setThumbnail("https://cdn.discordapp.com/attachments/521737357385400325/522068141166166048/3f00e193c464cb6a56e3fd4ea6b79641.png")
      .setDescription("Hello! Below are some tips for more help.")
      .setColor("#ff001d")
-     .addField("For commands say:", "!cmds")
-     .setFooter("For extra info DM a regional manager+.")
+     .addField("For commands say:", "?cmds")
+     .setFooter("For extra info DM a Manager+.")
      
      message.channel.send(embed)
  }   

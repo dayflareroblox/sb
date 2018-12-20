@@ -66,7 +66,7 @@ if(cmd === `${prefix}purge`){
   //---------------------------------------------------------------\\//---------------------------------------------------------------\\
 if(cmd === `${prefix}a`){
     let an = args.join(" ");
-if (message.member.roles.find('name', 'HR')) {
+if (message.member.roles.find('name', 'GROUP EXECUTIVES')) {
    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant announce things.");
    let embed = new Discord.RichEmbed()
    .setTitle("Announcement.")
@@ -84,8 +84,7 @@ if (message.member.roles.find('name', 'HR')) {
    
 if(cmd === `${prefix}shift`){
     let an = args.join(" ");
-if (message.member.roles.find('name', 'MR')) {
-   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry you cant announce things.");
+if (message.member.roles.find('name', 'GROUP EXECUTIVES')) {
    let embed = new Discord.RichEmbed()
    .setTitle("Shift.")
    .addField("Game:", "https://www.roblox.com/games/2633193389/Smoke-Burger")  
@@ -102,6 +101,7 @@ if (message.member.roles.find('name', 'MR')) {
   //---------------------------------------------------------------\\//---------------------------------------------------------------\\   
    
    if(cmd === `${prefix}poll`){
+if (message.member.roles.find('name', 'GROUP EXECUTIVES')) {
       let A = args.join(" ");      
       let embed = new Discord.RichEmbed()
       .setTitle("Poll.")
@@ -113,6 +113,9 @@ channel.send(embed).then(sentEmbed => {
     sentEmbed.react("👍")
     sentEmbed.react("👎")
 })
+} else {
+    message.channel.send("**Unauthorized Restriction Error: 401**")
+}
    }      
    
   //---------------------------------------------------------------\\//---------------------------------------------------------------\\   
